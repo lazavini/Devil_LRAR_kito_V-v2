@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A65486FC-3BAD-17B9-1A46-91F27F69A04C}</ProjectGuid>
+    <ProjectGuid>{0F0DB645-C67C-A4DC-1C46-01DA03B5261A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -169,35 +169,36 @@
     <None Include="Assets\Vuforia\Shaders\VuforiaVB_RGB.cginc" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Resources\Models3D\Fantasy_creature_Battle Spider\Scenes\read_me.txt" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Editor">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/Editor.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/Editor.dll</HintPath>
     </Reference>
     <Reference Include="XiaomiSupport">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.36f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -401,13 +402,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.36f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="ChannelPurchase">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
     </Reference>
     <Reference Include="UnityStore">
-      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-bf079afe53e5ce2e9d750307036d84ab638bbb43/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
+      <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.36f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -757,11 +758,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="VuforiaScripts.csproj">
-      <Project>{2EAE2A39-EAD6-5FF9-D098-C9C9876C8297}</Project>
+      <Project>{A6B23B55-C1EF-70FE-C483-DAE8F08D943C}</Project>
       <Name>VuforiaScripts</Name>
     </ProjectReference>
     <ProjectReference Include="VuforiaEditorScripts.csproj">
-      <Project>{0364AD5D-F300-F4EB-184C-E76FC4B2E859}</Project>
+      <Project>{76E123E4-FED9-7F8C-BD63-A982752287C4}</Project>
       <Name>VuforiaEditorScripts</Name>
     </ProjectReference>
   </ItemGroup>
