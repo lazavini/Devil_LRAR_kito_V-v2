@@ -28,7 +28,10 @@ public static class TrackedCardsCollection
                 "sounds/truck_sound",
                 "Computational Thinking is based on the concepts of Pattern Recognition, Abstraction, Problem Decomposition, Algorithms."),
             new ScaleCard("card_scale","","Scale card", 2,2,2),
-            new EffectCard("card_power","","Power card","walk")
+            new EffectCard("card_power","","Power card","walk"),
+            new SkinCard("card_Char","", "Skin card","idle")
+
+
 
             //new CharacterCard("CT_Head",
             //    "sounds/truck_sound",

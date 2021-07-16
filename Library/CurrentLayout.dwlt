@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 53
+  controlID: 51
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 54
+  controlID: 52
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 55
+  controlID: 53
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -330,9 +330,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 68380000
       m_LastClickedID: 0
-      m_ExpandedIDs: 0eebffff54ebffffa8ebffffdefbffff1a3d0000083e0000603e0000b0530000c253000058540000825400006c5500007e550000
+      m_ExpandedIDs: 72fbffffdefbffffa03e00008e3f0000124000005c40000066410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 0.99999994}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
     m_Target: 870.76636
     speed: 2
@@ -430,7 +430,7 @@ MonoBehaviour:
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0.5766989, y: -0.082239494, z: 0.058502108, w: 0.8106988}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -729,20 +729,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Resources/Efeitos
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Resources/Efeitos
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\diguest\Documents\Devil_LRAR_kito_V-v2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 686}
-    m_SelectedIDs: 5e390000
-    m_LastClickedID: 14686
-    m_ExpandedIDs: 00000000da290000e6290000622a0000b22a0000522b0000b02b0000c02b00003c2c0000462c0000c82c0000242d0000262d0000482d00008c2d00009a2d0000102e00007c2e0000862f0000d42f0000e82f0000bc300000c4300000d0300000f03000007831000064330000e23300000034000092350000e8350000ec350000fe380000da390000023a00003e3a0000ba3a0000203b0000323b0000aa3b0000fa3b0000c64e0000c84e0000ca4e0000cc4e0000ce4e0000d04e0000d24e0000d44e0000d64e0000d84e0000da4e0000dc4e0000de4e0000e04e0000e24e0000e44e0000e64e0000e84e0000ea4e000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 0e390000
+    m_LastClickedID: 14606
+    m_ExpandedIDs: 00000000da290000e6290000622a0000b22a0000522b0000b02b0000c02b00003c2c0000462c0000c82c0000242d0000262d0000482d00008c2d00009a2d0000102e00007c2e0000862f0000d42f0000e82f0000bc300000c4300000d0300000f03000007831000064330000e23300000034000092350000e8350000ec350000fe3800000e390000da390000023a00003e3a0000ba3a0000203b0000323b0000aa3b0000fa3b0000283e00002a3e00002c3e00002e3e0000303e0000323e0000343e0000363e0000383e00003a3e00003c3e00003e3e0000403e0000423e0000443e0000463e0000483e00004a3e00004c3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -770,7 +770,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000da290000e6290000622a0000b22a0000522b0000b02b0000c02b00003c2c0000462c0000c82c0000242d0000262d0000482d00008c2d00009a2d0000102e00007c2e0000862f0000d42f0000e82f0000bc300000c4300000d0300000f03000007831000064330000e23300000034000092350000e8350000ec350000fe380000da390000023a00003e3a0000ba3a0000203b0000323b0000aa3b0000fa3b0000c64e0000c84e0000ca4e0000cc4e0000ce4e0000d04e0000d24e0000d44e0000d64e0000d84e0000da4e0000dc4e0000de4e0000e04e0000e24e0000e44e0000e64e0000e84e0000ea4e0000
+    m_ExpandedIDs: 00000000da290000e6290000622a0000b22a0000522b0000b02b0000c02b00003c2c0000462c0000c82c0000242d0000262d0000482d00008c2d00009a2d0000102e00007c2e0000862f0000d42f0000e82f0000bc300000c4300000d0300000f03000007831000064330000e23300000034000092350000e8350000ec350000fe380000da390000023a00003e3a0000ba3a0000203b0000323b0000aa3b0000fa3b0000283e00002a3e00002c3e00002e3e0000303e0000323e0000343e0000363e0000383e00003a3e00003c3e00003e3e0000403e0000423e0000443e0000463e0000483e00004a3e00004c3e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
