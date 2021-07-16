@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="card_skin" size="1.000000 1.000000" />
+    <ImageTarget name="card_scale" size="1.000000 1.000000" />
+    <ImageTarget name="card_player2" size="1.000000 1.000000" />
+    <ImageTarget name="card_player1" size="1.000000 1.000000" />
+    <ImageTarget name="card_power" size="1.000000 1.000000" />
+    <ImageTarget name="programing" size="1.000000 0.989899" />
+    <ImageTarget name="patterns" size="1.000000 0.989899" />
+    <ImageTarget name="logic" size="1.000000 0.989899" />
+    <ImageTarget name="evaluation" size="1.000000 0.989899" />
+    <ImageTarget name="decomposition" size="1.000000 0.989899" />
+    <ImageTarget name="algorithms" size="1.000000 0.989899" />
+    <ImageTarget name="Abstraction" size="1.000000 0.989899" />
+    <ImageTarget name="CT_Head" size="1.000000 1.158263" />
+    <ImageTarget name="computationalThinking_marker" size="1.000000 0.924433" />
+  </Tracking>
+</QCARConfig>
