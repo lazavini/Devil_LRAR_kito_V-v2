@@ -22,7 +22,7 @@ namespace Assets.Vuforia.Scripts.Cards
             description,
             animation)
         {
-            Skins = new List<string> {"Player1", "Turtle",  "Slime", "Soldier", "SoldierPoly","Knight", "HumanoidBot","BattleSpider01", "BattleSpider02", "SkeletonArmor","Skeleton_NoArmor" };
+            Skins = new List<string> {"Player1", "Turtle",  "Slime", "Soldier", "SoldierHi", "SoldierPoly","Knight", "HumanoidBot","BattleSpider01", "BattleSpider02", "SkeletonArmor","Skeleton_NoArmor" };
         }
         public override void CardTrackChanged(TrackableBehaviour.Status status)
         {
