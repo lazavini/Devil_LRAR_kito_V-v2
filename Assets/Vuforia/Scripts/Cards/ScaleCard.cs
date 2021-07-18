@@ -14,7 +14,7 @@ namespace Assets.Vuforia.Scripts.Cards
         public float X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
-
+        Slider SliderScale => CardComponent.gameObject.GetComponentsInChildren<Slider>().FirstOrDefault(x => x.name == "Slider");
 
         public ScaleCard(string name, 
             string sound, 
@@ -24,7 +24,8 @@ namespace Assets.Vuforia.Scripts.Cards
             float z) : base(name,
             sound,
             description,
-            null)
+            null,
+            CardType.Scale)
         {
             X = x;
             Y = y;
@@ -38,7 +39,7 @@ namespace Assets.Vuforia.Scripts.Cards
         public override void Mix(ICard card)
         {
             base.Mix(card);
-            X = CardComponent.gameObject.GetComponentsInChildren<Slider>().FirstOrDefault(x => x.name == "Slider").value;
+            X = SliderScale?.value ?? 1;
             CardComponent.gameObject.GetComponentsInChildren<Text>().FirstOrDefault(x => x.name == "Text").text = $"Scale: {X}";
             card.CardComponent.transform.localScale = new Vector3(X, X, X);
         }

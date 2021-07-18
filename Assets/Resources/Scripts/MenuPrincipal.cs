@@ -9,9 +9,12 @@ public class MenuPrincipal : MonoBehaviour
     // Start is called before the first frame update
 
     public Button ButtonPlay;
+    public Button ButtonRandom;
+
     void Start()
     {
         ButtonPlay.onClick.AddListener(Play);
+        ButtonRandom.onClick.AddListener(Random);
     }
 
     // Update is called once per frame
@@ -32,6 +35,19 @@ public class MenuPrincipal : MonoBehaviour
 
             firstCard.Mix(c);
         }
+    }
+
+    public void Random()
+    {
+        var random = new System.Random();
+        var firstCard = TrackedCardsCollection.FirstCharacterCard;
+        var effectsCards = TrackedCardsCollection.EffectsCards;
+        var effectCard = effectsCards.ElementAt(random.Next(0, effectsCards.Count - 1));
+        var skinCards = TrackedCardsCollection.SkinCards;
+        var skinCard = skinCards.ElementAt(random.Next(0, effectsCards.Count - 1));
+        firstCard.Mix(skinCard);
+        firstCard.Mix(effectCard);
+        firstCard.CardComponent.gameObject.SetActive(true);
     }
 
     private void Hide()

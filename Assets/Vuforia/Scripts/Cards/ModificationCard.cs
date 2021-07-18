@@ -6,12 +6,12 @@ namespace Assets.Vuforia.Scripts.Cards
 {
     public abstract class ModificationCard : ICard
     {
-        public ModificationCard(string name, string sound, string description, string animation)
+        public ModificationCard(string name, string sound, string description, string animation, CardType cardType)
         {
             Name = name;
             Sound = sound;
             Description = description;
-            CardType = CardType.Modificator;
+            CardType = cardType;
             Animation = animation;
         }
 

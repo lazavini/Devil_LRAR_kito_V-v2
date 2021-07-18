@@ -9,6 +9,9 @@ namespace Assets.Vuforia.Scripts.Cards
     public enum CardType
     {
         Character = 1,
-        Modificator = 2
+        Modificator = 2,
+        Effect = 3,
+        Skin = 4,
+        Scale = 5
     }
 }

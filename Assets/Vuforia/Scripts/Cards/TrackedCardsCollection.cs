@@ -9,11 +9,18 @@ using Vuforia;
 
 public static class TrackedCardsCollection
 {
-    public static ICard FirstCharacterCard => Cards?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character) ?? null;
+    public static ICard FirstCharacterCard => Cards?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character && x.Name == "card_player1") ?? null;
     private static List<ICard> cards;
     private static List<ICard> cardsDataBase;
 
     public static List<ICard> Cards { get => cards?.Where(x => x.CardComponent != null).ToList() ?? new List<ICard>(); set => cards = value; }
+    public static List<CharacterCard> CharacterCards { get => cards?.Where(x => x.CardComponent != null && x.CardType == CardType.Character).Cast<CharacterCard>().ToList() ?? new List<CharacterCard>();}
+
+    public static List<EffectCard> EffectsCards { get => cardsDataBase?.Where(x => x.CardComponent != null && x.CardType == CardType.Effect).Cast<EffectCard>().ToList() ?? new List<EffectCard>(); }
+    public static List<SkinCard> SkinCards { get => cardsDataBase?.Where(x => x.CardComponent != null && x.CardType == CardType.Skin).Cast<SkinCard>().ToList() ?? new List<SkinCard>(); }
+
+
+
     public static List<ICard> CardsDataBase { get => cardsDataBase; set => cardsDataBase = value; }
 
     public static void InitializeDataBase()
@@ -65,6 +72,8 @@ public static class TrackedCardsCollection
             //    "sounds/truck_sound",
             //    "predict and analyse.")
         };
+
+
 
 
     }

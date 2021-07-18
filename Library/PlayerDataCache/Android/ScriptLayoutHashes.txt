@@ -1,12 +1,13 @@
 Android
 PlayerPath?
-C:/Users/diguest/Documents/LRAR/New_et/Make_Hero_AR.apk
+D:/Unity/Projects/Devil_LRAR_kito_V-v2/Devil.apk
 SceneListBegin?
 Assets/Scenes/LR_cards.unity
 SceneListEnd?
 e4db0ddf42150a3b60bd39cf2bc3def2 Assembly-CSharp.dll:.CFX_LightFlicker
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.BoundingBoxRenderer
 3c08375166df118bd1801438fc36b92f Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
+961fc4e6a4f823cdb92755c9a435090a VuforiaScripts.dll:.FCP_SpriteMeshEditor
 671420ad2c33f1ddaf6d076461adf15a Assembly-CSharp.dll:.CFX_Demo_Translate
 77c21079ace8d76ce6e941d3dabbfe6e Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 6adf0680d8d7e110dab1c5470b12851b Assembly-CSharp-Editor.dll:.CFXEasyEditor
@@ -202,6 +203,7 @@ fe10de86e42ce80dc24cf76ac1c87c2a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+3a1e5533473e4561362266fd7e3ba468 VuforiaScripts.dll:.FlexibleColorPicker
 4aac268d7e435f7a65add91aaba819a4 Assembly-CSharp.dll:.CFX_Demo_RandomDir
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 e3771a7f98de5c51174674d33cbec2c4 Assembly-CSharp.dll:.SliderMenuPower
@@ -323,6 +325,7 @@ fe10de86e42ce80dc24cf76ac1c87c2a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+84b024dc5e39dfd8403903f432d80c7c VuforiaScripts.dll:.FCP_ExampleScript
 0077fc8e4fbae67f80e80ebd534de5a0 Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 ff1cfd768b207053e073f8002f937b81 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.BackgroundPlaneBehaviour

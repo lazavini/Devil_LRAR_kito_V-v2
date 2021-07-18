@@ -60,6 +60,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         if (card == null) return;
         card.ChangeCardComponent(mTrackableBehaviour);
         card.CardTrackChanged(mTrackableBehaviour.CurrentStatus);
+
     }
 
     #endregion // UNITY_MONOBEHAVIOUR_METHODS

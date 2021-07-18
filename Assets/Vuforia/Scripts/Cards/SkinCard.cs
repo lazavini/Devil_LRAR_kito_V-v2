@@ -11,8 +11,15 @@ namespace Assets.Vuforia.Scripts.Cards
 {
     public class SkinCard : ModificationCard
     {
-        private ICollection<string> Skins;
-
+        public List<string> Skins { get; set; }
+        public string LastSelectedModel { get; set; }
+        FlexibleColorPicker ColorPicker => null;
+            
+            //CardComponent.gameObject.GetComponentInChildren<FlexibleColorPicker>(true);
+        Dropdown DropDownModel => null;
+        
+        
+        //CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown" && x.enabled);
 
         public SkinCard(string name, 
             string sound, 
@@ -20,9 +27,24 @@ namespace Assets.Vuforia.Scripts.Cards
             string animation) : base(name,
             sound,
             description,
-            animation)
+            animation,
+            CardType.Skin)
         {
-            Skins = new List<string> {"Player1", "Turtle",  "Slime", "Soldier", "SoldierHi", "SoldierPoly","Knight", "HumanoidBot","BattleSpider01", "BattleSpider02", "SkeletonArmor","Skeleton_NoArmor" };
+            Skins = new List<string> 
+            {
+                "Player1", 
+                "Turtle",  
+                "Slime", 
+                "Soldier", 
+                "SoldierHi", 
+                "SoldierPoly",
+                "Knight", 
+                "HumanoidBot",
+                "BattleSpider01", 
+                "BattleSpider02", 
+                "SkeletonArmor",
+                "Skeleton_NoArmor" 
+            };
         }
         public override void CardTrackChanged(TrackableBehaviour.Status status)
         {
@@ -31,19 +53,45 @@ namespace Assets.Vuforia.Scripts.Cards
 
         public override void Mix(ICard card)
         {
-            base.Mix(card);
-            var name = Skins.ElementAt(CardComponent.gameObject.GetComponentsInChildren<Dropdown>().FirstOrDefault(x => x.name == "Dropdown").value);
-            var oldSkin = card.CardComponent.gameObject.GetComponentsInChildren<Transform>().FirstOrDefault(x => x.name == name);
-            if (oldSkin != null)
+            var name = Skins.ElementAt(DropDownModel?.value ?? (new System.Random()).Next(0, Skins.Count - 1));
+            var oldSkin = card.CardComponent.gameObject.GetComponentsInChildren<Transform>(true)
+                .FirstOrDefault(x => x.name == name);
+            if (LastSelectedModel != null && name != LastSelectedModel)
             {
-                oldSkin.gameObject.SetActive(false);
-                oldSkin.parent = this.CardComponent.transform;
+                var lastSelectedModel = card.CardComponent.gameObject.GetComponentsInChildren<Transform>(true)
+                    .FirstOrDefault(x => x.name == LastSelectedModel);
+                lastSelectedModel.gameObject.SetActive(false);
+            }
+
+            LastSelectedModel = name;
+            if(oldSkin != null)
+            {
+                oldSkin.gameObject.SetActive(true);
+                ChangeComponentColor(oldSkin);
                 return;
             }
+
             var skin = CardComponent.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.name == name);
-            skin.gameObject.SetActive(true);
-            skin.transform.position = card.CardComponent.transform.position;
-            skin.parent = card.CardComponent.transform;
+            var newComponent = Transform.Instantiate(skin);
+            newComponent.name = name;
+            newComponent.position = card.CardComponent.transform.position;
+            newComponent.gameObject.SetActive(true);
+            newComponent.parent = card.CardComponent.transform;
+            ChangeComponentColor(newComponent);
+        }
+
+        private void ChangeComponentColor(Transform component)
+        {
+            var color = ColorPicker?.color ?? 
+                new Color(UnityEngine.Random.Range(-1, 5), 
+                UnityEngine.Random.Range(-1, 5), 
+                UnityEngine.Random.Range(-1, 5),
+                1);
+
+            foreach (var render in component.GetComponentsInChildren<Renderer>())
+            {
+                render.material.SetColor("_Color", color);
+            }
         }
     }
 }

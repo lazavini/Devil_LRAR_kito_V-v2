@@ -26,6 +26,8 @@ public class CharacterCard : ICard
     public ICollection<CardPart> Parts => CardComponent?.GetComponentsInChildren<Renderer>(true)
             .Select(x => new CardPart(x.name, x))?.ToList();
 
+    public ICollection<Transform> ActiveComponents => CardComponent?.GetComponentsInChildren<Transform>(false);
+
 
     public ICollection<Action> ButtonActions { get; set; }
     public CardType CardType { get; set ; }
@@ -141,6 +143,12 @@ public class CharacterCard : ICard
             return;
         }
         card.Mix(this);
+    }
+
+    public void Rotate()
+    {
+        var oldRotation = CardComponent.transform.localRotation;
+        CardComponent.transform.localRotation = new Quaternion(oldRotation.x + 1, oldRotation.y, oldRotation.z, oldRotation.w);
     }
 
     void PlaySound(string sound)
