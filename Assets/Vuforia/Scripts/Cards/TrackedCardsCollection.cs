@@ -30,13 +30,14 @@ public static class TrackedCardsCollection
         {
             new CharacterCard("card_player1",
                 "sounds/truck_sound",
-                "Computational Thinking is based on the concepts of Pattern Recognition, Abstraction, Problem Decomposition, Algorithms."),
+                "Computational Thinking is based on the concepts of Pattern ."),
             new CharacterCard("card_player2",
                 "sounds/truck_sound",
-                "Computational Thinking is based on the concepts of Pattern Recognition, Abstraction, Problem Decomposition, Algorithms."),
+                "Computational Thinking is based on "),
             new ScaleCard("card_scale","","Scale card", 2,2,2),
             new EffectCard("card_power","","Power card","walk"),
-            new SkinCard("card_Char","", "Skin card","idle")
+            new SkinCard("card_Char","", "Skin card","idle"),
+           // new ColorCard("card_color","#222222")
 
 
 

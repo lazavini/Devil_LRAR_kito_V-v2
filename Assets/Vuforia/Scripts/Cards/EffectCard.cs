@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Vuforia;
 using UnityEngine.UI;
-using Assets.Vuforia.Scripts.Extentions;
-using System.Collections;
-using UnityEngine.SceneManagement;
-using UnityEngine;
 
 namespace Assets.Vuforia.Scripts.Cards
 {
@@ -38,7 +31,8 @@ namespace Assets.Vuforia.Scripts.Cards
                 "Fire", 
                 "Spirits", 
                 "Explosion", 
-                "Tornado", "Smoke" , 
+                "Tornado",
+                "Smoke" , 
                 "Diamond", 
                 "Electric_1" , 
                 "Electric_2", 
