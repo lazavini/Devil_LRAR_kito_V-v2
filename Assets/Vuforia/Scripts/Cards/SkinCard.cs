@@ -16,7 +16,7 @@ namespace Assets.Vuforia.Scripts.Cards
         FlexibleColorPicker ColorPicker => CardComponent.gameObject.activeSelf ? CardComponent.gameObject.GetComponentInChildren<FlexibleColorPicker>(true) : null;
         Dropdown DropDownModel => CardComponent.gameObject.activeSelf ?  CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
 
-        public SkinCard(string name, 
+        public SkinCard(string name,
             string sound, 
             string description,
             string animation) : base(name,
@@ -26,8 +26,7 @@ namespace Assets.Vuforia.Scripts.Cards
             CardType.Skin)
         {
             Skins = new List<string> 
-            {
-                "Player1", 
+            { 
                 "Turtle",  
                 "Slime", 
                 "Soldier", 
@@ -38,7 +37,11 @@ namespace Assets.Vuforia.Scripts.Cards
                 "BattleSpider01", 
                 "BattleSpider02", 
                 "SkeletonArmor",
-                "Skeleton_NoArmor" 
+                "Skeleton_NoArmor",
+                "spider",
+                "SoldierHi",
+                "Player1",
+                "Devil"
             };
         }
         public override void CardTrackChanged(TrackableBehaviour.Status status)

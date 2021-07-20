@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
@@ -69,6 +70,11 @@ public class MenuPrincipal : MonoBehaviour
             component.enabled = false;
     }
 
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LR_cards");
+    }
     private void Show()
     {
         var rendererComponents = GetComponentsInChildren<Renderer>(true);

@@ -12,6 +12,7 @@ namespace Assets.Vuforia.Scripts.Cards
         Modificator = 2,
         Effect = 3,
         Skin = 4,
-        Scale = 5
+        Scale = 5,
+        Color =6
     }
 }
