@@ -16,13 +16,7 @@ namespace Assets.Vuforia.Scripts.Cards
     public class EffectCard : ModificationCard
     {
         private ICollection<string> Effects;
-        Dropdown DropDownEffect => null; 
-        
-        
-        //CardComponent.gameObject
-        //    .GetComponentsInChildren<Dropdown>(false)
-        //    .FirstOrDefault(x => x.name == "Dropdown" && x.enabled);
-
+        Dropdown DropDownEffect => CardComponent.gameObject.activeSelf ? CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
 
         public EffectCard(string name, 
             string sound, 

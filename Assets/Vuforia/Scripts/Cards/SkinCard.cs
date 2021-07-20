@@ -13,13 +13,8 @@ namespace Assets.Vuforia.Scripts.Cards
     {
         public List<string> Skins { get; set; }
         public string LastSelectedModel { get; set; }
-        FlexibleColorPicker ColorPicker => null;
-            
-            //CardComponent.gameObject.GetComponentInChildren<FlexibleColorPicker>(true);
-        Dropdown DropDownModel => null;
-        
-        
-        //CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown" && x.enabled);
+        FlexibleColorPicker ColorPicker => CardComponent.gameObject.activeSelf ? CardComponent.gameObject.GetComponentInChildren<FlexibleColorPicker>(true) : null;
+        Dropdown DropDownModel => CardComponent.gameObject.activeSelf ?  CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
 
         public SkinCard(string name, 
             string sound, 
