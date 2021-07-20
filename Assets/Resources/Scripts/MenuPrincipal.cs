@@ -21,7 +21,7 @@ public class MenuPrincipal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TrackedCardsCollection.FirstCharacterCard != null)
+        if (TrackedCardsCollection.FirstPlayer != null)
             Show();
         else
             Hide();
@@ -29,19 +29,17 @@ public class MenuPrincipal : MonoBehaviour
 
     public void Play()
     {
-        var firstCard = TrackedCardsCollection.FirstCharacterCard;
-        foreach (var c in TrackedCardsCollection.Cards)
+        var secondPlayer = TrackedCardsCollection.SecondPlayer;
+        foreach (var c in TrackedCardsCollection.Cards.Where(x => x.CardType != Assets.Vuforia.Scripts.Cards.CardType.Character))
         {
-            if (c == firstCard) continue;
-
-            firstCard.Mix(c);
+            secondPlayer.Mix(c);
         }
     }
 
     public void Random()
     {
         var random = new System.Random();
-        var firstCard = TrackedCardsCollection.FirstCharacterCard;
+        var firstCard = TrackedCardsCollection.FirstPlayer;
         var effectsCards = TrackedCardsCollection.EffectsCards;
         var effectCard = effectsCards.ElementAt(random.Next(0, effectsCards.Count - 1));
         var skinCards = TrackedCardsCollection.SkinCards;

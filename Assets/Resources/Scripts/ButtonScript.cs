@@ -17,7 +17,7 @@ public class ButtonScript : MonoBehaviour
     {
         if (TrackedCardsCollection.Cards.Count(x => x.CardComponent != null) >= 2)
         {
-            var firstCard = TrackedCardsCollection.FirstCharacterCard;
+            var firstCard = TrackedCardsCollection.FirstPlayer;
 
             foreach (var c in TrackedCardsCollection.Cards)
             {
