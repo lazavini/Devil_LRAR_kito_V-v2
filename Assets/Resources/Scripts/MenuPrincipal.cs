@@ -11,6 +11,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public Button ButtonPlay;
     public Button ButtonRandom;
+    
 
     void Start()
     {

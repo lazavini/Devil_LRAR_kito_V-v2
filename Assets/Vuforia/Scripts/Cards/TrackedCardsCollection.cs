@@ -10,6 +10,7 @@ using Vuforia;
 public static class TrackedCardsCollection
 {
     public static ICard FirstPlayer => Cards?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character && x.Name == "card_player1") ?? null;
+    public static CharacterCard FirstPlayerDataBase => cardsDataBase?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character && x.Name == "card_player1") ?? null;
     public static ICard SecondPlayer => Cards?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character && x.Name == "card_player2") ?? null;
 
     private static List<ICard> cards;

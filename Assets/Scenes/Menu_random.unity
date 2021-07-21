@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4855940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ RectTransform:
   m_GameObject: {fileID: 115901353}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.718024, y: 4.3168793, z: 1.718024}
+  m_LocalScale: {x: 1.718024, y: 5.4500604, z: 1.718024}
   m_Children:
   - {fileID: 755055986}
   m_Father: {fileID: 1658929950}
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102900000, guid: 394142ea6fe8afa4f9176ca812dc7908, type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 144227041}
   - component: {fileID: 144227040}
   m_Layer: 5
-  m_Name: InputField (2)
+  m_Name: Input_Color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,7 +721,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -18.971344, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &288658189
 MonoBehaviour:
@@ -869,7 +869,7 @@ GameObject:
   - component: {fileID: 340073932}
   - component: {fileID: 340073931}
   m_Layer: 5
-  m_Name: InputField (3)
+  m_Name: Input_Scale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,7 +1019,7 @@ RectTransform:
   m_GameObject: {fileID: 428855899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.76226133, y: 4.469062, z: 2.032697}
+  m_LocalScale: {x: 0.6267846, y: 3.6747754, z: 1.6714257}
   m_Children: []
   m_Father: {fileID: 4855940}
   m_RootOrder: 1
@@ -1138,7 +1138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2212, y: -15}
+  m_AnchoredPosition: {x: 1.2212, y: 128}
   m_SizeDelta: {x: 164.74799, y: 84.18552}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501328585
@@ -1824,7 +1824,7 @@ GameObject:
   - component: {fileID: 902269929}
   - component: {fileID: 902269928}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Btn_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,7 +1846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 491, y: -205}
+  m_AnchoredPosition: {x: -495, y: -205}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902269928
@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 941177496}
   - component: {fileID: 941177495}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Btn_Random
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1960,7 +1960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.5, y: 226.8}
+  m_AnchoredPosition: {x: 9.5, y: -118}
   m_SizeDelta: {x: 170.74191, y: 22.272022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941177495
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102900000, guid: 394142ea6fe8afa4f9176ca812dc7908, type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -2225,7 +2225,7 @@ GameObject:
   - component: {fileID: 1268084528}
   - component: {fileID: 1268084527}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Btn_exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2247,7 +2247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 477, y: 256}
+  m_AnchoredPosition: {x: 477, y: 229}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268084527
@@ -2612,7 +2612,7 @@ GameObject:
   - component: {fileID: 1439535641}
   - component: {fileID: 1439535640}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: Input_Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2937,7 +2937,7 @@ GameObject:
   - component: {fileID: 1611701565}
   - component: {fileID: 1611701564}
   m_Layer: 5
-  m_Name: InputField (1)
+  m_Name: Input_Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3076,7 +3076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1658929950
 RectTransform:
   m_ObjectHideFlags: 0

@@ -85,6 +85,7 @@
     <Compile Include="Assets\Resources\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Resources\Scripts\dataTarget.cs" />
     <Compile Include="Assets\Resources\Scripts\Exit.cs" />
+    <Compile Include="Assets\Resources\Scripts\Menu_Random.cs" />
     <Compile Include="Assets\Resources\Scripts\MenuPrincipal.cs" />
     <Compile Include="Assets\Resources\Scripts\ModelSwapper.cs" />
     <Compile Include="Assets\Resources\Scripts\PauseMenu.cs" />
