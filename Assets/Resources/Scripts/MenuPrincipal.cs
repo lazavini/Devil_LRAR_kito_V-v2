@@ -11,7 +11,12 @@ public class MenuPrincipal : MonoBehaviour
 
     public Button ButtonPlay;
     public Button ButtonRandom;
-    
+    public Button ButtonRandomHero;
+    public Button ButtonCreateHero;
+    public Button ButtonAbout;
+    public Button ButtonCredits;
+
+
 
     void Start()
     {

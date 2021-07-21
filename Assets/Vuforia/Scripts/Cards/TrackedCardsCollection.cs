@@ -40,7 +40,7 @@ public static class TrackedCardsCollection
             new ScaleCard("card_scale","","Scale card", 2,2,2),
             new EffectCard("card_power","","Power card","walk"),
             new SkinCard("card_Char","", "Skin card","idle"),
-           // new ColorCard("card_color","#222222")
+           // new ColorCard("card_color","","Colocar card ak","#222222")
 
 
 

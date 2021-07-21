@@ -49,4 +49,9 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quitting Game...");
         Application.Quit();
     }
+    public void LoadLR_cards()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LR_cards");
+    } 
 }
