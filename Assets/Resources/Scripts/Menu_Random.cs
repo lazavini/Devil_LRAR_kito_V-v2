@@ -31,10 +31,20 @@ public class Menu_Random : MonoBehaviour
         firstCard.Mix(skinCard);
         firstCard.Mix(effectCard);
 
-        firstCard.
-    
-       // firstCard.CardComponent.gameObject.SetActive(true);
-       // SceneManager.LoadScene("LR_cards");
+        var activeSkin = firstCard.ActiveComponents.FirstOrDefault(x => x.tag == "skin");
+        var activeEffect = firstCard.ActiveComponents.FirstOrDefault(x => x.tag == "effect");
+
+
+        Input_Hero.text = activeSkin.name;
+        Input_Power.text = activeEffect.name;
+        Input_Color.text = firstCard.CardComponent.GetComponentInChildren<Renderer>().material.color.ToString();
+        Input_Scale.text = firstCard.CardComponent.transform.ToString();
+
+
+
+
+        // firstCard.CardComponent.gameObject.SetActive(true);
+        // SceneManager.LoadScene("LR_cards");
     }
 
 
