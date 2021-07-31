@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43915787, g: 0.48742533, b: 0.5676784, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -391,55 +391,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267532314}
   m_CullTransparentMesh: 0
---- !u!1 &362835456
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 362835458}
-  - component: {fileID: 362835457}
-  m_Layer: 0
-  m_Name: OpenMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &362835457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362835456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e035d12af0c023b4a87ed29aaa9a66f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonPlay: {fileID: 0}
-  ButtonRandom: {fileID: 0}
-  ButtonRandomHero: {fileID: 1645298095}
-  ButtonCreateHero: {fileID: 1126597220}
-  ButtonAbout: {fileID: 1183604527}
-  ButtonCredits: {fileID: 1388977312}
---- !u!4 &362835458
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362835456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 587.64667, y: 184.15169, z: 11.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624440055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1122,7 @@ GameObject:
   - component: {fileID: 1645635296}
   - component: {fileID: 1645635295}
   - component: {fileID: 1645635294}
+  - component: {fileID: 1645635298}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1259,6 +1211,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1645635298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645635293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e035d12af0c023b4a87ed29aaa9a66f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonCreateHero: {fileID: 1126597220}
+  ButtonRandom: {fileID: 1645298095}
+  ButtonAbout: {fileID: 1183604527}
+  ButtonCredits: {fileID: 1388977312}
 --- !u!1 &2054793394
 GameObject:
   m_ObjectHideFlags: 0

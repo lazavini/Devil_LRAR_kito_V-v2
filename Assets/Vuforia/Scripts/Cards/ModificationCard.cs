@@ -22,6 +22,7 @@ namespace Assets.Vuforia.Scripts.Cards
         public CardType CardType { get ; set ; }
         public string Animation { get; set; }
         public Animator Animator { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public TrackableBehaviour.Status Status { get; set; }
 
         public virtual void CardTrackChanged(TrackableBehaviour.Status status)
         {
@@ -33,6 +34,7 @@ namespace Assets.Vuforia.Scripts.Cards
             {
                 Hide();
             }
+            Status = status;
         }
 
         public virtual void ChangeCardComponent(Component newComponent)
@@ -44,6 +46,9 @@ namespace Assets.Vuforia.Scripts.Cards
         {
             if (!string.IsNullOrEmpty(Animation))
                 card.Animator?.Play(Animation);
+
+
+
         }
 
         private void Hide()

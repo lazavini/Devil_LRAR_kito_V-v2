@@ -9,8 +9,8 @@ namespace Assets.Vuforia.Scripts.Cards
     public class EffectCard : ModificationCard
     {
         private ICollection<string> Effects;
-        Dropdown DropDownEffect => CardComponent.gameObject.activeSelf ? CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
-
+        Dropdown DropDownEffect => Status == TrackableBehaviour.Status.TRACKED ? CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
+        public string SelectedEffect { get; set; }
         public EffectCard(string name, 
             string sound, 
             string description,
@@ -41,23 +41,42 @@ namespace Assets.Vuforia.Scripts.Cards
         public override void Mix(ICard card)
         {
             base.Mix(card);
-            var name = Effects.ElementAt(DropDownEffect?.value ?? (new System.Random()).Next(0, Effects.Count - 1));
-            var oldEffect = card.CardComponent.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.transform.name == name);
+            var effectName = "";
+            
+            if(SelectedEffect != null)
+            {
+                effectName = SelectedEffect;
+            }
+            else
+                effectName =  Effects.ElementAt(DropDownEffect?.value ?? (new System.Random()).Next(0, Effects.Count - 1));
+
+
+            if (CardComponent == null)
+            {
+                SelectedEffect = effectName;
+                return;
+            }
+            else
+                SelectedEffect = null;
+
+
+
+            var oldEffect = card.CardComponent?.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.transform.name == effectName);
             if (oldEffect != null)
             {
                 oldEffect.gameObject.SetActive(!oldEffect.gameObject.activeSelf);
                 return;
             }
 
-            var effect = CardComponent.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.name == name);
+            var effect = CardComponent.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.name == effectName);
             var newComponent = Transform.Instantiate(effect);
 
-            newComponent.name = name;
+            newComponent.name = effectName;
             newComponent.position = card.CardComponent.transform.position;
             newComponent.gameObject.SetActive(true);
             newComponent.parent = card.CardComponent.transform;
 
-            card.Animator?.Play(name);
+            card.Animator?.Play(effectName);
         }
     }
 }

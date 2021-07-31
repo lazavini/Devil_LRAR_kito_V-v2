@@ -13,8 +13,9 @@ namespace Assets.Vuforia.Scripts.Cards
     {
         public List<string> Skins { get; set; }
         public string LastSelectedModel { get; set; }
-        FlexibleColorPicker ColorPicker => CardComponent.gameObject.activeSelf ? CardComponent.gameObject.GetComponentInChildren<FlexibleColorPicker>(true) : null;
-        Dropdown DropDownModel => CardComponent.gameObject.activeSelf ?  CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
+        public string SelectedSkin { get; set; }
+
+        Dropdown DropDownModel => Status == TrackableBehaviour.Status.TRACKED ? CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
 
         public SkinCard(string name,
             string sound, 
@@ -30,7 +31,6 @@ namespace Assets.Vuforia.Scripts.Cards
                 "Turtle",  
                 "Slime", 
                 "Soldier", 
-                "SoldierHi", 
                 "SoldierPoly",
                 "Knight", 
                 "HumanoidBot",
@@ -51,45 +51,43 @@ namespace Assets.Vuforia.Scripts.Cards
 
         public override void Mix(ICard card)
         {
-            var name = Skins.ElementAt(DropDownModel?.value ?? (new System.Random()).Next(0, Skins.Count - 1));
-            var oldSkin = card.CardComponent.gameObject.GetComponentsInChildren<Transform>(true)
-                .FirstOrDefault(x => x.name == name);
-            if (LastSelectedModel != null && name != LastSelectedModel)
+            var skinName = "";
+            if(SelectedSkin != null)
             {
-                var lastSelectedModel = card.CardComponent.gameObject.GetComponentsInChildren<Transform>(true)
-                    .FirstOrDefault(x => x.name == LastSelectedModel);
-                lastSelectedModel.gameObject.SetActive(false);
+                skinName = SelectedSkin;
             }
+            else
+                skinName = Skins.ElementAt(DropDownModel?.value ?? (new System.Random()).Next(0, Skins.Count - 1));
 
-            LastSelectedModel = name;
-            if(oldSkin != null)
+
+            if (CardComponent == null)
             {
-                oldSkin.gameObject.SetActive(true);
-                ChangeComponentColor(oldSkin);
+                SelectedSkin = skinName;
+                return;
+            }
+            else
+                SelectedSkin = null;
+
+            var oldSkins = card.CardComponent?.gameObject.GetComponentsInChildren<Transform>(true)
+                .Where(x => x.tag == "skin");
+
+            var oldSkinFounded = false;
+            foreach (var oldSkin in oldSkins)
+            {
+                oldSkinFounded = oldSkin.name == skinName;
+                oldSkin.gameObject.SetActive(oldSkinFounded);
+            }
+            if(oldSkinFounded)
+            {
                 return;
             }
 
-            var skin = CardComponent.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.name == name);
+            var skin = CardComponent.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.name == skinName);
             var newComponent = Transform.Instantiate(skin);
-            newComponent.name = name;
+            newComponent.name = skinName;
             newComponent.position = card.CardComponent.transform.position;
             newComponent.gameObject.SetActive(true);
             newComponent.parent = card.CardComponent.transform;
-            ChangeComponentColor(newComponent);
-        }
-
-        private void ChangeComponentColor(Transform component)
-        {
-            var color = ColorPicker?.color ?? 
-                new Color(UnityEngine.Random.Range(-1, 5), 
-                UnityEngine.Random.Range(-1, 5), 
-                UnityEngine.Random.Range(-1, 5),
-                1);
-
-            foreach (var render in component.GetComponentsInChildren<Renderer>())
-            {
-                render.material.SetColor("_Color", color);
-            }
         }
     }
 }

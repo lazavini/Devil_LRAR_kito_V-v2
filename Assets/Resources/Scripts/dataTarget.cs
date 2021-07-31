@@ -21,7 +21,6 @@ namespace Vuforia
         void Start()
         {
             //add Audio Source as new game object component
-            TrackedCardsCollection.InitializeDataBase();
             soundTarget = (AudioSource)gameObject.AddComponent<AudioSource>();
             //label = GameObject.Find("LabelName").GetComponent<Text>();
             //label.text = "no name";

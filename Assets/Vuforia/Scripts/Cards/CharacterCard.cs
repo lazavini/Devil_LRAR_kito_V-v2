@@ -23,15 +23,20 @@ public class CharacterCard : ICard
     public string Description { get; set; }
     public Component CardComponent { get; set; }
     //public Component CardComponent => GameObject.Find(Name)?.GetComponentsInChildren<Renderer>().FirstOrDefault(x => x.name == Name);
-    public ICollection<CardPart> Parts => CardComponent?.GetComponentsInChildren<Renderer>(true)
+    public ICollection<CardPart> Parts => CardComponent == null ? null : CardComponent.GetComponentsInChildren<Renderer>(true)
             .Select(x => new CardPart(x.name, x))?.ToList();
 
-    public ICollection<Transform> ActiveComponents => CardComponent?.GetComponentsInChildren<Transform>(false);
+    public ICollection<Transform> ActiveComponents => CardComponent == null ? null : CardComponent.GetComponentsInChildren<Transform>(false);
 
 
     public ICollection<Action> ButtonActions { get; set; }
     public CardType CardType { get; set ; }
-    public Animator Animator { get => CardComponent?.GetComponentsInChildren<Animator>().FirstOrDefault(); set => throw new NotImplementedException(); }
+    public Animator Animator { get => CardComponent == null ? null : CardComponent.GetComponentsInChildren<Animator>().FirstOrDefault(); set => throw new NotImplementedException(); }
+    public TrackableBehaviour.Status Status { get; set; }
+
+    public Transform ActiveSkin => ActiveComponents?.FirstOrDefault(x => x.tag == "skin");
+    public Transform ActiveEffect => ActiveComponents?.FirstOrDefault(x => x.tag == "effect");
+
 
     public void ChangeCardComponent(Component component)
     {
@@ -55,6 +60,7 @@ public class CharacterCard : ICard
         {
             Hide();
         }
+        Status = status;
     }
 
     private void Hide()

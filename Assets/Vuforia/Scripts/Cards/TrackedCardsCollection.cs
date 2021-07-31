@@ -10,8 +10,10 @@ using Vuforia;
 public static class TrackedCardsCollection
 {
     public static ICard FirstPlayer => Cards?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character && x.Name == "card_player1") ?? null;
-    public static CharacterCard FirstPlayerDataBase => (CharacterCard)cardsDataBase?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character && x.Name == "card_player1") ?? null;
+    public static CharacterCard FirstPlayerDataBase => (CharacterCard)cardsDataBase?.FirstOrDefault(x => x.CardType == CardType.Character && x.Name == "card_player1") ?? null;
     public static ICard SecondPlayer => Cards?.FirstOrDefault(x => x.CardComponent != null && x.CardType == CardType.Character && x.Name == "card_player2") ?? null;
+    public static CharacterCard SecondPlayerDataBase => (CharacterCard)cardsDataBase?.FirstOrDefault(x => x.CardType == CardType.Character && x.Name == "card_player2") ?? null;
+
 
     private static List<ICard> cards;
     private static List<ICard> cardsDataBase;
@@ -19,8 +21,11 @@ public static class TrackedCardsCollection
     public static List<ICard> Cards { get => cards?.Where(x => x.CardComponent != null).ToList() ?? new List<ICard>(); set => cards = value; }
     public static List<CharacterCard> CharacterCards { get => cards?.Where(x => x.CardComponent != null && x.CardType == CardType.Character).Cast<CharacterCard>().ToList() ?? new List<CharacterCard>();}
 
-    public static List<EffectCard> EffectsCards { get => cardsDataBase?.Where(x => x.CardComponent != null && x.CardType == CardType.Effect).Cast<EffectCard>().ToList() ?? new List<EffectCard>(); }
-    public static List<SkinCard> SkinCards { get => cardsDataBase?.Where(x => x.CardComponent != null && x.CardType == CardType.Skin).Cast<SkinCard>().ToList() ?? new List<SkinCard>(); }
+    public static List<EffectCard> EffectsCards { get => cardsDataBase?.Where(x => x.CardType == CardType.Effect).Cast<EffectCard>().ToList() ?? new List<EffectCard>(); }
+    public static List<SkinCard> SkinCards { get => cardsDataBase?.Where(x => x.CardType == CardType.Skin).Cast<SkinCard>().ToList() ?? new List<SkinCard>(); }
+    public static List<ScaleCard> ScaleCards { get => cardsDataBase?.Where(x => x.CardType == CardType.Scale).Cast<ScaleCard>().ToList() ?? new List<ScaleCard>(); }
+    public static List<ColorCard> ColorCards { get => cardsDataBase?.Where(x => x.CardType == CardType.Color).Cast<ColorCard>().ToList() ?? new List<ColorCard>(); }
+
 
 
 
@@ -28,7 +33,7 @@ public static class TrackedCardsCollection
 
     public static void InitializeDataBase()
     {
-
+        if (cardsDataBase != null) return;
         cardsDataBase = new List<ICard>
         {
             new CharacterCard("card_player1",
@@ -40,7 +45,7 @@ public static class TrackedCardsCollection
             new ScaleCard("card_scale","","Scale card", 2,2,2),
             new EffectCard("card_power","","Power card","walk"),
             new SkinCard("card_Char","", "Skin card","idle"),
-           // new ColorCard("card_color","","Colocar card ak","#222222")
+            new ColorCard("card_color","","Colocar card ak", null)
 
 
 
@@ -76,10 +81,6 @@ public static class TrackedCardsCollection
             //    "sounds/truck_sound",
             //    "predict and analyse.")
         };
-
-
-
-
     }
 
 

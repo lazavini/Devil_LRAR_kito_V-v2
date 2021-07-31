@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
 using System.Linq;
+using Assets.Vuforia.Scripts.Cards;
 
 /// <summary>
 /// A custom handler that implements the ITrackableEventHandler interface.
@@ -19,10 +20,7 @@ using System.Linq;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
-    public Transform TextTargetName;
-    public Transform ButtonAction;
-    public Transform TextDescription;
-    public Transform PanelDescription;
+   
 
     #region PROTECTED_MEMBER_VARIABLES
 
@@ -60,7 +58,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         if (card == null) return;
         card.ChangeCardComponent(mTrackableBehaviour);
         card.CardTrackChanged(mTrackableBehaviour.CurrentStatus);
-
+        
     }
 
     #endregion // UNITY_MONOBEHAVIOUR_METHODS
@@ -78,12 +76,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         m_PreviousStatus = previousStatus;
         m_NewStatus = newStatus;
 
-        
-        
-        ///Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + 
-           //       " " + mTrackableBehaviour.CurrentStatus +
-             //     " -- " + mTrackableBehaviour.CurrentStatusInfo);
-
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
@@ -97,9 +89,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         }
         else
         {
-            // For combo of previousStatus=UNKNOWN + newStatus=UNKNOWN|NOT_FOUND
-            // Vuforia is starting, but tracking has not been lost or found yet
-            // Call OnTrackingLost() to hide the augmentations
             OnTrackingLost();
         }
     }
@@ -115,6 +104,12 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             Debug.Log($"FOUND: {mTrackableBehaviour.name}");
             var card = TrackedCardsCollection.CardsDataBase.FirstOrDefault(x => x.Name == mTrackableBehaviour.name);
             if (card == null) return;
+
+            if (card.Name == "card_player1" && CardMixer.Player1Mixer.RandomGenerated)
+            {
+                CardMixer.Player1Mixer.GeneratePlayer();
+            }
+
             card.ChangeCardComponent(mTrackableBehaviour);
             card.CardTrackChanged(TrackableBehaviour.Status.TRACKED);
             TrackedCardsCollection.AddCard(card);
@@ -131,13 +126,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             TrackedCardsCollection.RemoveCard(card);
             card?.CardTrackChanged(TrackableBehaviour.Status.NO_POSE);
         }
-        //Evertime the target lost / no target found it will show �???� on the TextTargetName. Button, Description and Panel will invicible (inactive)
-
-        //TextTargetName.GetComponent<Text>().text = "???";
-        //ButtonAction.gameObject.SetActive(false);
-        //TextDescription.gameObject.SetActive(false);
-        //PanelDescription.gameObject.SetActive(false);
-
     }
 
     #endregion // PROTECTED_METHODS

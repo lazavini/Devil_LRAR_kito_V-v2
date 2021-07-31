@@ -11,10 +11,10 @@ namespace Assets.Vuforia.Scripts.Cards
 {
     public class ScaleCard : ModificationCard
     {
-        public float X { get; set; }
+        public float? X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
-        Slider SliderScale => CardComponent.gameObject.GetComponentsInChildren<Slider>().FirstOrDefault(x => x.name == "Slider");
+        Slider SliderScale => Status == TrackableBehaviour.Status.TRACKED ? CardComponent.gameObject.GetComponentsInChildren<Slider>().FirstOrDefault(x => x.name == "Slider") : null;
 
         public ScaleCard(string name, 
             string sound, 
@@ -39,9 +39,26 @@ namespace Assets.Vuforia.Scripts.Cards
         public override void Mix(ICard card)
         {
             base.Mix(card);
-            X = SliderScale?.value ?? 1;
-            CardComponent.gameObject.GetComponentsInChildren<Text>().FirstOrDefault(x => x.name == "Text").text = $"Scale: {X}";
-            card.CardComponent.transform.localScale = new Vector3(X, X, X);
+            var scale = (float)0.0;
+            var random = new System.Random();
+
+            if (X.HasValue)
+            {
+                scale = X.Value;
+            }
+            else
+                scale = SliderScale?.value  ?? (new System.Random()).Next(1,4);
+
+            if (CardComponent == null)
+            {
+                X = scale;
+                return;
+            }
+            else
+                X = null;
+
+            CardComponent.gameObject.GetComponentsInChildren<Text>().FirstOrDefault(x => x.name == "Text").text = $"Scale: {scale}";
+            card.CardComponent.transform.localScale = new Vector3(scale, scale, scale);
         }
     }
 }

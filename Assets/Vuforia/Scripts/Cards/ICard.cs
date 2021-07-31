@@ -16,6 +16,7 @@ namespace Assets.Vuforia.Scripts.Cards
         Component CardComponent { get; set; }
         Animator Animator { get; set; }
         CardType CardType { get; set; }
+        TrackableBehaviour.Status Status { get; set; }
 
         void Mix(ICard card);
         void ChangeCardComponent(Component newComponent);
