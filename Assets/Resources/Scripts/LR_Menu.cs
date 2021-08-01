@@ -50,8 +50,10 @@ public class LR_Menu : MonoBehaviour
 
     public void Play()
     {
-        CardMixer.Player2Mixer.MixTrackedCards();
-        CardMixer.Player1Mixer.MixTrackedCards();
+        if (!CardMixer.Player2Mixer.RandomGenerated)
+            CardMixer.Player2Mixer.MixTrackedCards();
+        if(!CardMixer.Player1Mixer.RandomGenerated)
+            CardMixer.Player1Mixer.MixTrackedCards();
     }
 
     public void Exit()
