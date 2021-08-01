@@ -1,10 +1,16 @@
 sceneSetups:
-- path: Assets/Scenes/LR_cards.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Scenes/Menu_random.unity
-  isLoaded: 0
-  isActive: 0
 - path: Assets/Scenes/Main.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/Scenes/Menu_random.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/Scene_Team.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/LR_cards.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/Credits.unity
+  isLoaded: 0
+  isActive: 0

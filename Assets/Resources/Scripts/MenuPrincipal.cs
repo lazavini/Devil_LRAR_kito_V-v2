@@ -19,6 +19,9 @@ public class MenuPrincipal : MonoBehaviour
         CardMixer.Intialize();
         ButtonRandom.onClick.AddListener(Random);
         ButtonCreateHero.onClick.AddListener(Create);
+        ButtonCredits.onClick.AddListener(Credits);
+        ButtonAbout.onClick.AddListener(About);
+
     }
 
     // Update is called once per frame
@@ -34,6 +37,14 @@ public class MenuPrincipal : MonoBehaviour
     public void Create()
     {
         SceneManager.LoadScene("LR_cards");
+    }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void About()
+    {
+        SceneManager.LoadScene("Scene_Team");
     }
 }
  
