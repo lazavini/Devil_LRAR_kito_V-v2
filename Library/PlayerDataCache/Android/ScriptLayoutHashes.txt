@@ -6,7 +6,6 @@ Assets/Scenes/Main.unity
 Assets/Scenes/LR_cards.unity
 Assets/Scenes/Menu_random.unity
 Assets/Scenes/Scene_Team.unity
-Assets/Scenes/Credits.unity
 SceneListEnd?
 e4db0ddf42150a3b60bd39cf2bc3def2 Assembly-CSharp.dll:.CFX_LightFlicker
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.BoundingBoxRenderer
@@ -244,7 +243,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 dad3a1f1e1ecb4691721bab721edd60a Assembly-CSharp.dll:.CFX_AutoRotate
 11319334e5365797f8056694f9b5dae4 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.DefaultTrackableEventHandler
-4dbc8e117d21986330d7c5bc4eef61e1 Assembly-CSharp.dll:.MenuPrincipal
+835724d1bc49eb3ffa4707923c03a082 Assembly-CSharp.dll:.MenuPrincipal
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.TMP_DigitValidator
 421b20ccd7815ebee5e2b14a986d2efc Assembly-CSharp.dll:.CFX_Demo_New
 a9f049c3dc82bb36fdb142e4d6a2658d Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
@@ -372,3 +371,5 @@ fe10de86e42ce80dc24cf76ac1c87c2a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+376b267aac4f96e2b992cada79f29b32 Assembly-CSharp.dll:.Menu_Team
+376b267aac4f96e2b992cada79f29b32 Assembly-CSharp.dll:.Menu_how_to_use

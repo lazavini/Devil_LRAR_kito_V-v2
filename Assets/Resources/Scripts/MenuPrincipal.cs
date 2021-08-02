@@ -11,7 +11,7 @@ public class MenuPrincipal : MonoBehaviour
     public Button ButtonCreateHero;
     public Button ButtonRandom;
     public Button ButtonAbout;
-    public Button ButtonCredits;
+    public Button ButtonHowtouse;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class MenuPrincipal : MonoBehaviour
         CardMixer.Intialize();
         ButtonRandom.onClick.AddListener(Random);
         ButtonCreateHero.onClick.AddListener(Create);
-        ButtonCredits.onClick.AddListener(Credits);
+        ButtonHowtouse.onClick.AddListener(Howtouse);
         ButtonAbout.onClick.AddListener(About);
 
     }
@@ -38,9 +38,9 @@ public class MenuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene("LR_cards");
     }
-    public void Credits()
+    public void Howtouse()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("How_to_use");
     }
     public void About()
     {
