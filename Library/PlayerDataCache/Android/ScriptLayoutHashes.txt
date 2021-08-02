@@ -5,6 +5,8 @@ SceneListBegin?
 Assets/Scenes/Main.unity
 Assets/Scenes/LR_cards.unity
 Assets/Scenes/Menu_random.unity
+Assets/Scenes/Scene_Team.unity
+Assets/Scenes/Credits.unity
 SceneListEnd?
 e4db0ddf42150a3b60bd39cf2bc3def2 Assembly-CSharp.dll:.CFX_LightFlicker
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.BoundingBoxRenderer
@@ -110,6 +112,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:SlimUI.ModernMenu.CheckMusicVolume
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Main_Meu
 4e9333594897a1fb8b136ad2eae996c7 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 1d0beb1a2d4edee4c06b6835632e83a3 Assembly-CSharp.dll:.CFX_AutoStopLoopedEffect
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Exit
@@ -289,6 +292,7 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 e70e7b311a1620c2e899545b2e1fdfae Assembly-CSharp.dll:.CFX_Demo_RandomDirectionTranslate
 e80c1450883443c68d6c2dade213536f Assembly-CSharp.dll:TMPro.Examples.TMPro_InstructionOverlay
 6a540469ce1151474b8a5930186a3f92 Assembly-CSharp.dll:SlimUI.ModernMenu.ThemeUI
+766065952d3f680acff30373039bce27 Assembly-CSharp.dll:.LR_Menu
 902070700454499321523f80222dec5f Assembly-CSharp.dll:.ModelSwapper
 c8c5e65e9fb858572516474d6e2102bc Assembly-CSharp.dll:.PauseMenu
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TeleType
@@ -368,5 +372,3 @@ fe10de86e42ce80dc24cf76ac1c87c2a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Main_Meu
-766065952d3f680acff30373039bce27 Assembly-CSharp.dll:.LR_Menu

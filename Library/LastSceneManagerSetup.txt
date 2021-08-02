@@ -11,6 +11,6 @@ sceneSetups:
 - path: Assets/Scenes/LR_cards.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/Scenes/Credits.unity
+- path: Assets/Scenes/How_to_use.unity
   isLoaded: 0
   isActive: 0
