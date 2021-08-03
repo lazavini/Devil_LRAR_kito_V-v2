@@ -143,7 +143,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1879758739}
-  m_Father: {fileID: 1963347414}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -245,8 +245,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.4, y: -46.2}
-  m_SizeDelta: {x: 187.09607, y: 97.97476}
+  m_AnchoredPosition: {x: 18.3, y: 3.5}
+  m_SizeDelta: {x: 182.95038, y: 49.820595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334174871
 MonoBehaviour:
@@ -279,8 +279,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Author: Lazaro V de O Lima\nSupervisor: Ph.D Pedro Manuel Rangel Santos
-    Henriques\nCo-supervisor: Ph.D Lu\xEDs Gonzaga Magalh\xE3es"
+  m_Text: "Author: Lazaro V de O Lima\nSup: Ph.D Pedro Rangel Henriques\nCo-sup: Ph.D
+    Lu\xEDs Gonzaga Magalh\xE3es"
 --- !u!222 &334174872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -764,10 +764,9 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 59731543}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2075417208
 GameObject:
@@ -833,5 +832,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
