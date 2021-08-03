@@ -29,15 +29,15 @@ public class loadingtext : MonoBehaviour {
             a = (int)(imageComp.fillAmount * 100);
             if (a > 0 && a <= 33)
             {
-                textNormal.text = "Loading...";
+                textNormal.text = "Escolha o Heroi...";
             }
             else if (a > 33 && a <= 67)
             {
-                textNormal.text = "Downloading...";
+                textNormal.text = "Escolha seu Tamanho...";
             }
             else if (a > 67 && a <= 100)
             {
-                textNormal.text = "Please wait...";
+                textNormal.text = "Escolha seu poder...";
             }
             else {
 

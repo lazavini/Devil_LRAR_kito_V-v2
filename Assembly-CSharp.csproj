@@ -64,10 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\loadingBar\scripts\Loading.cs" />
-    <Compile Include="Assets\loadingBar\scripts\loadingbar.cs" />
     <Compile Include="Assets\loadingBar\scripts\loadingcolorful.cs" />
-    <Compile Include="Assets\loadingBar\scripts\loadingtext.cs" />
     <Compile Include="Assets\loadingBar\scripts\rotatetotate.cs" />
     <Compile Include="Assets\loadingBar\scripts\SimpleLoading.cs" />
     <Compile Include="Assets\loadingBar\scripts\simplerotate.cs" />
@@ -85,6 +82,9 @@
     <Compile Include="Assets\Resources\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Resources\Scripts\dataTarget.cs" />
     <Compile Include="Assets\Resources\Scripts\Exit.cs" />
+    <Compile Include="Assets\Resources\Scripts\Loading.cs" />
+    <Compile Include="Assets\Resources\Scripts\loadingbar.cs" />
+    <Compile Include="Assets\Resources\Scripts\loadingtext.cs" />
     <Compile Include="Assets\Resources\Scripts\LR_Menu.cs" />
     <Compile Include="Assets\Resources\Scripts\Main_Meu.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu_how_to_use.cs" />
