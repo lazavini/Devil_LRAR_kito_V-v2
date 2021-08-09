@@ -14,3 +14,6 @@ sceneSetups:
 - path: Assets/Scenes/How_to_use.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/Scenes/Survey.unity
+  isLoaded: 0
+  isActive: 0

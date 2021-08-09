@@ -12,6 +12,7 @@ public class MenuPrincipal : MonoBehaviour
     public Button ButtonRandom;
     public Button ButtonAbout;
     public Button ButtonHowtouse;
+    public Button ButtonSurvey;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class MenuPrincipal : MonoBehaviour
         ButtonCreateHero.onClick.AddListener(Create);
         ButtonHowtouse.onClick.AddListener(Howtouse);
         ButtonAbout.onClick.AddListener(About);
+        ButtonSurvey.onClick.AddListener(Survey);
 
     }
 
@@ -45,6 +47,10 @@ public class MenuPrincipal : MonoBehaviour
     public void About()
     {
         SceneManager.LoadScene("Scene_Team");
+    }
+    public void Survey()
+    {
+        SceneManager.LoadScene("Survey");
     }
 }
  
