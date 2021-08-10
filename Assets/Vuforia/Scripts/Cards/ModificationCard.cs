@@ -81,12 +81,6 @@ namespace Assets.Vuforia.Scripts.Cards
             foreach (var component in rendererComponents)
             {
                 component.enabled = true;
-                Debug.Log("Component name " + component.name);
-                if (component.GetComponent<Animation>())
-                {
-                    component.GetComponent<Animation>().Play();
-                    // Debug.Log("Animation playing " + component.GetComponent<Animation>().isPlaying);
-                }
             }
             //Enable colliders:
             foreach (var component in colliderComponents)
@@ -94,7 +88,6 @@ namespace Assets.Vuforia.Scripts.Cards
             // Enable canvas':
             foreach (var component in canvasComponents)
                 component.enabled = true;
-
 
         }
     }

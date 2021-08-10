@@ -65,8 +65,6 @@ namespace Assets.Vuforia.Scripts.Cards
                 SelectedSkin = skinName;
                 return;
             }
-            else
-                SelectedSkin = null;
 
             var oldSkins = card.CardComponent?.gameObject.GetComponentsInChildren<Transform>(true)
                 .Where(x => x.tag == "skin");
@@ -88,6 +86,7 @@ namespace Assets.Vuforia.Scripts.Cards
             newComponent.position = card.CardComponent.transform.position;
             newComponent.gameObject.SetActive(true);
             newComponent.parent = card.CardComponent.transform;
+            SelectedSkin = skinName;
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Assets.Vuforia.Scripts.Cards
                 X = null;
 
             CardComponent.gameObject.GetComponentsInChildren<Text>().FirstOrDefault(x => x.name == "Text").text = $"Scale: {scale}";
-            card.CardComponent.transform.localScale = new Vector3(scale, scale, scale);
+            card.CardComponent.GetComponentsInChildren<Component>(true).FirstOrDefault(x => x.tag == "skin").transform.localScale = new Vector3(scale, scale, scale);
         }
     }
 }

@@ -75,8 +75,8 @@ namespace Assets.Vuforia.Scripts.Cards
             newComponent.position = card.CardComponent.transform.position;
             newComponent.gameObject.SetActive(true);
             newComponent.parent = card.CardComponent.transform;
-
             card.Animator?.Play(effectName);
+            SelectedEffect = effectName;
         }
     }
 }

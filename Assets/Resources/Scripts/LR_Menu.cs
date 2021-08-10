@@ -11,11 +11,7 @@ public class LR_Menu : MonoBehaviour
     public Button PlayButton;
     public Button ExitButton;
     public Component Menu;
-
-
-    public Text TextCardPlayer;
-    public Text TextCardEffect;
-    public Text TextCardSkin;
+    public Image ImageProgressBar;
 
 
 
@@ -34,18 +30,7 @@ public class LR_Menu : MonoBehaviour
             Menu.gameObject.SetActive(true);
         else
             Menu.gameObject.SetActive(false);
-
-
-
-        TextCardPlayer.gameObject.SetActive(false);
-        TextCardEffect.gameObject.SetActive(false);
-        TextCardSkin.gameObject.SetActive(false);
-        if (TrackedCardsCollection.Cards.Count(x => x.CardType == CardType.Character) == 0)
-            TextCardPlayer.gameObject.SetActive(true);
-        else if(TrackedCardsCollection.Cards.Count(x => x.CardType == CardType.Skin) == 0)
-            TextCardSkin.gameObject.SetActive(true);
-        else if (TrackedCardsCollection.Cards.Count(x => x.CardType == CardType.Effect) == 0)
-            TextCardEffect.gameObject.SetActive(true);
+       ImageProgressBar.fillAmount = CardMixer.UpdatePercentages();
     }
 
     public void Play()

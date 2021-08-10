@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Assets.Vuforia.Scripts.Cards;
 
-public class MenuPrincipal : MonoBehaviour
+public class Main_Menu : MonoBehaviour
 {
     public Button ButtonCreateHero;
     public Button ButtonRandom;

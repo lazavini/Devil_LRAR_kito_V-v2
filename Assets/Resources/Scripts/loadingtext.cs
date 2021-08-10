@@ -10,44 +10,55 @@ public class loadingtext : MonoBehaviour {
 
     public float speed = 200f;
     public Text text;
-    public Text textNormal;
+    public Text textStatus;
+    public Text textInstruction;
+
 
 
     // Use this for initialization
-    void Start () {
+    void Start () 
+    {
         rectComponent = GetComponent<RectTransform>();
         imageComp = rectComponent.GetComponent<Image>();
         imageComp.fillAmount = 0.0f;
     }
 	
 	// Update is called once per frame
-	void Update () {
-        int a = 0;
-        if (imageComp.fillAmount != 1f)
+	void Update () 
+    {
+        var a = imageComp.fillAmount;
+        if (a == 0)
         {
-            imageComp.fillAmount = imageComp.fillAmount + Time.deltaTime * speed;
-            a = (int)(imageComp.fillAmount * 100);
-            if (a > 0 && a <= 33)
-            {
-                textNormal.text = "Escolha o Heroi...";
-            }
-            else if (a > 33 && a <= 67)
-            {
-                textNormal.text = "Escolha seu Tamanho...";
-            }
-            else if (a > 67 && a <= 100)
-            {
-                textNormal.text = "Escolha seu poder...";
-            }
-            else {
+            textStatus.text = "Coloque a carta player...";
+            textInstruction.text = "Add player card";
+        }
 
-            }
-            text.text = a + "%";
-        }
-        else
+        if(a == 0.25f)
         {
-            imageComp.fillAmount = 0.0f;
-            text.text = "0%";
+            textStatus.text = "Coloque a carta skin...";
+            textInstruction.text = "Add skin card";
+
         }
+
+        if (a == 0.5f)
+        {
+            textStatus.text = "Coloque a carta power...";
+            textInstruction.text = "Add power card";
+        }
+
+
+        if (a == 0.75f)
+        {
+            textStatus.text = "Coloque a carta color...";
+            textInstruction.text = "Add color card";
+        }
+
+        if(a == 1)
+        {
+            textStatus.text = "Heroi completo!";
+            textInstruction.text = "";
+        }
+
+        text.text = a * 100 + "%";
     }
 }

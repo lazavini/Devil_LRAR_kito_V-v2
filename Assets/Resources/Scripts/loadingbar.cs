@@ -19,15 +19,15 @@ public class loadingbar : MonoBehaviour {
 
     void Update()
     {
-        if (imageComp.fillAmount != 1f)
-        {
-            imageComp.fillAmount = imageComp.fillAmount + Time.deltaTime * speed;
+        //if (imageComp.fillAmount != 1f)
+        //{
+        //    imageComp.fillAmount = imageComp.fillAmount + Time.deltaTime * speed;
             
-        }
-        else
-        {
-            imageComp.fillAmount = 0.0f;
+        //}
+        //else
+        //{
+        //    imageComp.fillAmount = 0.0f;
             
-        }
+        //}
     }
 }

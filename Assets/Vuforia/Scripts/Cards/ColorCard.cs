@@ -37,10 +37,10 @@ namespace Assets.Vuforia.Scripts.Cards
             }
             else
                 color = ColorPicker?.color ??
-                    new Color(UnityEngine.Random.Range(0, 255),
-                    UnityEngine.Random.Range(0, 255),
-                    UnityEngine.Random.Range(0, 255),
-                    UnityEngine.Random.Range(0,1));
+                    new Color(UnityEngine.Random.Range(0, 1f),
+                    UnityEngine.Random.Range(0, 1f),
+                    UnityEngine.Random.Range(0, 1f),
+                    1);
 
             if (CardComponent == null)
             {
@@ -50,10 +50,12 @@ namespace Assets.Vuforia.Scripts.Cards
             else
                 SelectedColor = null;
 
-            foreach (var render in card.CardComponent.GetComponentsInChildren<Renderer>())
+            foreach (var skin in card.CardComponent.GetComponentsInChildren<Component>().Where(x => x.tag == "skin"))
             {
-                render.material.SetColor("_Color", color);
+                foreach(var render in skin.GetComponentsInChildren<Renderer>())
+                    render.material.SetColor("_Color", color);
             }
+            SelectedColor = ColorUtility.ToHtmlStringRGBA(color);
         }
     }
 }

@@ -36,7 +36,7 @@ public class CharacterCard : ICard
 
     public Transform ActiveSkin => ActiveComponents?.FirstOrDefault(x => x.tag == "skin");
     public Transform ActiveEffect => ActiveComponents?.FirstOrDefault(x => x.tag == "effect");
-
+    public bool IsActive => Status == TrackableBehaviour.Status.TRACKED;
 
     public void ChangeCardComponent(Component component)
     {
