@@ -65,6 +65,8 @@ namespace Assets.Vuforia.Scripts.Cards
             if (oldEffect != null)
             {
                 oldEffect.gameObject.SetActive(!oldEffect.gameObject.activeSelf);
+                if(oldEffect.gameObject.activeSelf)
+                    SelectedEffect = effectName;
                 return;
             }
 

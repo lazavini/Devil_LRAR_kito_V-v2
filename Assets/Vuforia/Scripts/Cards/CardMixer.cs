@@ -10,7 +10,6 @@ using UnityEngine.UI;
 
 namespace Assets.Vuforia.Scripts.Cards
 {
-    [Serializable]
     public class CardMixer
     {
         public static CardMixer Player1Mixer { get; set; }
@@ -31,35 +30,55 @@ namespace Assets.Vuforia.Scripts.Cards
 
         public static float UpdatePercentages()
         {
+            if(!Player1Mixer.RandomGenerated)
+                return Player1Mixer.CalculatePercentage();
             return Player2Mixer.CalculatePercentage();
+
         }
 
         public float CalculatePercentage()
         {
-            if (Percentage == 1 || RandomGenerated)
-                return Percentage;
+            if (!Player1Mixer.RandomGenerated)
+            {
+                if (Percentage == 1 || RandomGenerated)
+                    return Percentage;
 
-            Percentage = 0;
-            if (PlayerCard.IsActive)
-                Percentage += 0.25f;
+                Percentage = 0;
+                if (PlayerCard.IsActive)
+                    Percentage += 0.25f;
+                else
+                    return Percentage;
+
+                if (!string.IsNullOrEmpty(SeletedSkin))
+                    Percentage += 0.25f;
+                else
+                    return Percentage;
+
+                if (!string.IsNullOrEmpty(SelectedEffect))
+                    Percentage += 0.25f;
+                else
+                    return Percentage;
+
+                if (!string.IsNullOrEmpty(SelectedColor))
+                    Percentage += 0.25f;
+                else
+                    return Percentage;
+            }
             else
-                return Percentage;
+            {
+                Percentage = 0;
+                if (Player2Mixer.PlayerCard.IsActive)
+                    Percentage += 0.25f;
 
-            if (!string.IsNullOrEmpty(SeletedSkin))
-                Percentage += 0.25f;
-            else
-                return Percentage;
+                if (Player1Mixer.SeletedSkin == Player2Mixer.SeletedSkin)
+                    Percentage += 0.25f;
 
-            if (!string.IsNullOrEmpty(SelectedEffect))
-                Percentage += 0.25f;
-            else
-                return Percentage;
+                if (Player1Mixer.SelectedEffect == Player2Mixer.SelectedEffect)
+                    Percentage += 0.25f;
 
-            if (!string.IsNullOrEmpty(SelectedColor))
-                Percentage += 0.25f;
-            else
-                return Percentage;
-
+                if (Player1Mixer.SelectedColor == Player2Mixer.SelectedColor)
+                    Percentage += 0.25f;
+            }
             return Percentage;
         }
 
@@ -85,7 +104,7 @@ namespace Assets.Vuforia.Scripts.Cards
             var colorCard = colorCards.FirstOrDefault();
             firstCard.Mix(skinCard);
             firstCard.Mix(effectCard);
-            firstCard.Mix(scaleCard);
+            //firstCard.Mix(scaleCard);
             firstCard.Mix(colorCard);
             
             SeletedSkin = skinCard.SelectedSkin;
@@ -95,8 +114,8 @@ namespace Assets.Vuforia.Scripts.Cards
             effectCard.SelectedEffect = null;
 
 
-            Scale = scaleCard.X.ToString();
-            scaleCard.X = null;
+            //Scale = scaleCard.X.ToString();
+            //scaleCard.X = null;
 
 
             SelectedColor = colorCard.SelectedColor;
@@ -135,8 +154,6 @@ namespace Assets.Vuforia.Scripts.Cards
                         break;
                 }
             }
-            if (Percentage == 1)
-                return;
         }
     
         public void GeneratePlayer()
@@ -159,10 +176,10 @@ namespace Assets.Vuforia.Scripts.Cards
 
             var colorCards = TrackedCardsCollection.ColorCards;
             var colorCard = colorCards.FirstOrDefault();
-            colorCard.SelectedColor = SelectedColor;
+            colorCard.SelectedColor = "#" + SelectedColor;
             firstCard.Mix(skinCard);
             firstCard.Mix(effectCard);
-            firstCard.Mix(scaleCard);
+            //firstCard.Mix(scaleCard);
             firstCard.Mix(colorCard);
             PlayerGenerated = true;
         }

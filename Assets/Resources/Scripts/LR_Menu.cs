@@ -1,17 +1,22 @@
-﻿using Assets.Vuforia.Scripts.Cards;
+﻿using Assets.Resources.Scripts;
+using Assets.Vuforia.Scripts.Cards;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Vuforia;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
 
 public class LR_Menu : MonoBehaviour
 {
     public Button PlayButton;
     public Button ExitButton;
     public Component Menu;
-    public Image ImageProgressBar;
+    public UnityEngine.UI.Image ImageProgressBar;
 
 
 
@@ -30,7 +35,10 @@ public class LR_Menu : MonoBehaviour
             Menu.gameObject.SetActive(true);
         else
             Menu.gameObject.SetActive(false);
-       ImageProgressBar.fillAmount = CardMixer.UpdatePercentages();
+
+        ImageProgressBar.fillAmount = CardMixer.UpdatePercentages();
+
+       
     }
 
     public void Play()
@@ -43,6 +51,7 @@ public class LR_Menu : MonoBehaviour
 
     public void Exit()
     {
+        NavigationHistory.PreviousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Main");
     }
 }

@@ -50,9 +50,9 @@ namespace Assets.Vuforia.Scripts.Cards
             else
                 SelectedColor = null;
 
-            foreach (var skin in card.CardComponent.GetComponentsInChildren<Component>().Where(x => x.tag == "skin"))
+            foreach (var skin in card.CardComponent.GetComponentsInChildren<Component>(true).Where(x => x.tag == "skin"))
             {
-                foreach(var render in skin.GetComponentsInChildren<Renderer>())
+                foreach(var render in skin.GetComponentsInChildren<Renderer>(true))
                     render.material.SetColor("_Color", color);
             }
             SelectedColor = ColorUtility.ToHtmlStringRGBA(color);
