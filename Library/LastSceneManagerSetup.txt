@@ -1,13 +1,13 @@
 sceneSetups:
 - path: Assets/Scenes/Main.unity
-  isLoaded: 0
-  isActive: 0
+  isLoaded: 1
+  isActive: 1
 - path: Assets/Scenes/Menu_random.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/Load.unity
-  isLoaded: 1
-  isActive: 1
+  isLoaded: 0
+  isActive: 0
 - path: Assets/Scenes/Scene_Team.unity
   isLoaded: 0
   isActive: 0
