@@ -41,7 +41,8 @@ namespace Assets.Vuforia.Scripts.Cards
                 "spider",
                 "SoldierHi",
                 "Player1",
-                "Devil"
+                "Devil",
+                "tractor"
             };
         }
         public override void CardTrackChanged(TrackableBehaviour.Status status)

@@ -135,6 +135,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 5bddb32bcb848f51c6efb9a0b86ba855 Assembly-CSharp.dll:.rotatetotate
 abb74232924aeae3cb0affcdf05292df Assembly-CSharp.dll:.Loading
 4d16cfbaa8e821a2b370e80844a0e9bc Assembly-CSharp.dll:TMPro.Examples.Benchmark03
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.QrcodeReader
 e6f0efd0e20669d577e9d21526b3d3f9 Assembly-CSharp.dll:TMPro.Examples.WarpTextExample
 dd7520b7d4e690e8c593273e7b9fbe80 Assembly-CSharp.dll:TMPro.Examples.TMP_TextEventCheck
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
@@ -217,11 +218,12 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 e3771a7f98de5c51174674d33cbec2c4 Assembly-CSharp.dll:.SliderMenuPower
 3f5031037e63abe5dcf87c278e01a4de Assembly-CSharp.dll:.CFX_Demo_RotateCamera
 3375c3d749f8f4cad889721b431bdc27 Assembly-CSharp.dll:TMPro.Examples.CameraController
+c27f89eecae08a722239e4d2a0af0bee Assembly-CSharp.dll:.NavigationMenu
 e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexJitter
 5d27c6e85ec89cfab8577e9e26695e88 Assembly-CSharp.dll:.CFX_AutoDestructShuriken
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.NewBehaviourScript
-316e863320b8c87159004b8b8d6eeace Assembly-CSharp.dll:.loadingtext
+e0d31cf61cdc17ead9979817caa98d1c Assembly-CSharp.dll:.loadingtext
 660deb0ce569359218f0ba85b7ce0e3a Assembly-CSharp.dll:.CFX_LightIntensityFade
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 3cae62e09a50c5d5aae8d0536b3d8fde Assembly-CSharp.dll:.ChatController
@@ -243,7 +245,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 dad3a1f1e1ecb4691721bab721edd60a Assembly-CSharp.dll:.CFX_AutoRotate
 11319334e5365797f8056694f9b5dae4 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 71bb6a6b6c8f052f948db64c7dd3ca4f VuforiaScripts.dll:.DefaultTrackableEventHandler
-835724d1bc49eb3ffa4707923c03a082 Assembly-CSharp.dll:.MenuPrincipal
+bcb69ac47f13c5646d35bcc59778edaa Assembly-CSharp.dll:.Main_Menu
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.TMP_DigitValidator
 421b20ccd7815ebee5e2b14a986d2efc Assembly-CSharp.dll:.CFX_Demo_New
 a9f049c3dc82bb36fdb142e4d6a2658d Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
@@ -293,7 +295,7 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 e70e7b311a1620c2e899545b2e1fdfae Assembly-CSharp.dll:.CFX_Demo_RandomDirectionTranslate
 e80c1450883443c68d6c2dade213536f Assembly-CSharp.dll:TMPro.Examples.TMPro_InstructionOverlay
 6a540469ce1151474b8a5930186a3f92 Assembly-CSharp.dll:SlimUI.ModernMenu.ThemeUI
-766065952d3f680acff30373039bce27 Assembly-CSharp.dll:.LR_Menu
+9c976fb9bf0df985dde928d9030dd9c5 Assembly-CSharp.dll:.LR_Menu
 902070700454499321523f80222dec5f Assembly-CSharp.dll:.ModelSwapper
 c8c5e65e9fb858572516474d6e2102bc Assembly-CSharp.dll:.PauseMenu
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TeleType
