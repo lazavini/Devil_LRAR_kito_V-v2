@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Assets.Vuforia.Scripts.Cards
 {
     public class CardMixer
     {
+
         public static CardMixer Player1Mixer { get; set; }
         public static CardMixer Player2Mixer { get; set; }
 
@@ -20,6 +22,7 @@ namespace Assets.Vuforia.Scripts.Cards
         {
             PlayerCard = playerCard;
             Percentage = 0f;
+            PlayerState = new PlayerState();
         }
 
         public static void Intialize()
@@ -30,7 +33,7 @@ namespace Assets.Vuforia.Scripts.Cards
 
         public static float UpdatePercentages()
         {
-            if(!Player1Mixer.RandomGenerated)
+            if(!Player1Mixer.PlayerState.RandomGenerated)
                 return Player1Mixer.CalculatePercentage();
             return Player2Mixer.CalculatePercentage();
 
@@ -38,9 +41,9 @@ namespace Assets.Vuforia.Scripts.Cards
 
         public float CalculatePercentage()
         {
-            if (!Player1Mixer.RandomGenerated)
+            if (!Player1Mixer.PlayerState.RandomGenerated)
             {
-                if (Percentage == 1 || RandomGenerated)
+                if (Percentage == 1 || PlayerState.RandomGenerated)
                     return Percentage;
 
                 Percentage = 0;
@@ -49,17 +52,17 @@ namespace Assets.Vuforia.Scripts.Cards
                 else
                     return Percentage;
 
-                if (!string.IsNullOrEmpty(SeletedSkin))
+                if (!string.IsNullOrEmpty(PlayerState.SeletedSkin))
                     Percentage += 0.25f;
                 else
                     return Percentage;
 
-                if (!string.IsNullOrEmpty(SelectedEffect))
+                if (!string.IsNullOrEmpty(PlayerState.SelectedEffect))
                     Percentage += 0.25f;
                 else
                     return Percentage;
 
-                if (!string.IsNullOrEmpty(SelectedColor))
+                if (!string.IsNullOrEmpty(PlayerState.SelectedColor))
                     Percentage += 0.25f;
                 else
                     return Percentage;
@@ -70,13 +73,13 @@ namespace Assets.Vuforia.Scripts.Cards
                 if (Player2Mixer.PlayerCard.IsActive)
                     Percentage += 0.25f;
 
-                if (Player1Mixer.SeletedSkin == Player2Mixer.SeletedSkin)
+                if (Player1Mixer.PlayerState.SeletedSkin == Player2Mixer.PlayerState.SeletedSkin)
                     Percentage += 0.25f;
 
-                if (Player1Mixer.SelectedEffect == Player2Mixer.SelectedEffect)
+                if (Player1Mixer.PlayerState.SelectedEffect == Player2Mixer.PlayerState.SelectedEffect)
                     Percentage += 0.25f;
 
-                if (Player1Mixer.SelectedColor == Player2Mixer.SelectedColor)
+                if (Player1Mixer.PlayerState.SelectedColor == Player2Mixer.PlayerState.SelectedColor)
                     Percentage += 0.25f;
             }
             return Percentage;
@@ -84,11 +87,7 @@ namespace Assets.Vuforia.Scripts.Cards
 
         public CharacterCard PlayerCard { get; set; }
         public bool PlayerGenerated { get; set; }
-        public string SeletedSkin { get; set; }
-        public string SelectedEffect { get; set; }
-        public string Scale { get; set; }
-        public string SelectedColor { get; set; }
-        public bool RandomGenerated { get; set; }
+        public PlayerState PlayerState { get; set; }
         public float Percentage { get; set; }
 
         public void RandomCards()
@@ -107,10 +106,10 @@ namespace Assets.Vuforia.Scripts.Cards
             //firstCard.Mix(scaleCard);
             firstCard.Mix(colorCard);
             
-            SeletedSkin = skinCard.SelectedSkin;
+            PlayerState.SeletedSkin = skinCard.SelectedSkin;
             skinCard.SelectedSkin = null;
 
-            SelectedEffect = effectCard.SelectedEffect;
+            PlayerState.SelectedEffect = effectCard.SelectedEffect;
             effectCard.SelectedEffect = null;
 
 
@@ -118,10 +117,10 @@ namespace Assets.Vuforia.Scripts.Cards
             //scaleCard.X = null;
 
 
-            SelectedColor = colorCard.SelectedColor;
+            PlayerState.SelectedColor = colorCard.SelectedColor;
             colorCard.SelectedColor = null;
             PlayerGenerated = false;
-            RandomGenerated = true;
+            PlayerState.RandomGenerated = true;
         }
 
         public void MixTrackedCards()
@@ -134,26 +133,38 @@ namespace Assets.Vuforia.Scripts.Cards
                 {
                     case CardType.Skin:
                         var skinCard = (SkinCard)c;
-                        SeletedSkin = skinCard.SelectedSkin;
+                        PlayerState.SeletedSkin = skinCard.SelectedSkin;
                         skinCard.SelectedSkin = null;
                         break;
                     case CardType.Scale:
                         var scaleCard = (ScaleCard)c;
-                        Scale = scaleCard.X.ToString();
+                        PlayerState.Scale = scaleCard.X.ToString();
                         scaleCard.X = null;
                         break;
                     case CardType.Effect:
                         var effectCard = (EffectCard)c;
-                        SelectedEffect = effectCard.SelectedEffect;
+                        PlayerState.SelectedEffect = effectCard.SelectedEffect;
                         effectCard.SelectedEffect = null;
                         break;
                     case CardType.Color:
                         var colorCard = (ColorCard)c;
-                        SelectedColor = colorCard.SelectedColor;
+                        PlayerState.SelectedColor = colorCard.SelectedColor;
                         colorCard.SelectedColor = null;
                         break;
                 }
             }
+        }
+
+        public void RegeneratePlayer()
+        {
+            PlayerGenerated = false;
+            GeneratePlayer();
+        }
+
+        public void LoadState(PlayerState playerState)
+        {
+            PlayerState = playerState;
+            RegeneratePlayer();
         }
     
         public void GeneratePlayer()
@@ -163,11 +174,11 @@ namespace Assets.Vuforia.Scripts.Cards
             var firstCard = PlayerCard;
             var effectsCards = TrackedCardsCollection.EffectsCards;
             var effectCard = effectsCards.FirstOrDefault();
-            effectCard.SelectedEffect = SelectedEffect;
+            effectCard.SelectedEffect = PlayerState.SelectedEffect;
 
             var skinCards = TrackedCardsCollection.SkinCards;
             var skinCard = skinCards.FirstOrDefault();
-            skinCard.SelectedSkin = SeletedSkin;
+            skinCard.SelectedSkin = PlayerState.SeletedSkin;
 
 
             var scaleCards = TrackedCardsCollection.ScaleCards;
@@ -176,7 +187,7 @@ namespace Assets.Vuforia.Scripts.Cards
 
             var colorCards = TrackedCardsCollection.ColorCards;
             var colorCard = colorCards.FirstOrDefault();
-            colorCard.SelectedColor = "#" + SelectedColor;
+            colorCard.SelectedColor = "#" + PlayerState.SelectedColor;
             firstCard.Mix(skinCard);
             firstCard.Mix(effectCard);
             //firstCard.Mix(scaleCard);
@@ -185,39 +196,20 @@ namespace Assets.Vuforia.Scripts.Cards
         }
     
 
-        public void Save()
+        public static void Save(string saveName)
         {
-            string destination = Application.persistentDataPath + $"/{PlayerCard.Name}.dat";
-            FileStream file;
-            if (File.Exists(destination)) file = File.OpenWrite(destination);
-            else file = File.Create(destination);
-            BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(file, this);
-            file.Close();
+            string destination = Application.persistentDataPath + $"/{saveName}.json";
+            var json = JsonConvert.SerializeObject(new List<PlayerState> { Player1Mixer.PlayerState, Player2Mixer.PlayerState });
+            File.WriteAllText(destination, json);
         }
 
 
-        public void LoadFromFile()
+        public static void LoadFromFile(string saveName)
         {
-            string destination = Application.persistentDataPath + $"/{PlayerCard.Name}.dat";
-            FileStream file;
-
-            if (File.Exists(destination)) file = File.OpenRead(destination);
-            else
-            {
-                Debug.LogError("File not found");
-                return;
-            }
-
-            BinaryFormatter bf = new BinaryFormatter();
-            CardMixer data = (CardMixer)bf.Deserialize(file);
-            file.Close();
-
-            SeletedSkin = data.SeletedSkin;
-            SelectedEffect = data.SelectedEffect;
-            Scale = data.Scale;
-            SelectedColor = data.SelectedColor;
-            PlayerGenerated = false;
+            string destination = Application.persistentDataPath + $"/{saveName}.json";
+            var states = JsonConvert.DeserializeObject<List<PlayerState>>(File.ReadAllText(destination));
+            Player1Mixer.LoadState(states[0]);
+            Player2Mixer.LoadState(states[1]);
         }
     }
 }

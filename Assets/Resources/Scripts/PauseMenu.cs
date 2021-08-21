@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Vuforia.Scripts.Cards;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,13 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GamiIsPause = false;
     public GameObject pauseMenuUI;
+    public Component PanelSave;
+    public Component PanelLoad;
+
+    public UnityEngine.UI.InputField InputSaveName;
+    public UnityEngine.UI.InputField InputLoadName;
+
+
 
     // Update is called once per frame
     void Update()
@@ -22,30 +30,60 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-        
     }
 
-       public void Resume()
-        {
+    public void Resume()
+    {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamiIsPause = false;
-            
-        }
-        void Pause()
-        {
+    }
+    public void Pause()
+    {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamiIsPause = true;
-        }
+    }
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main");
     }
+
+    //public void Load()
+    //{
+    //    SceneManager.LoadScene("Load");
+    //}
+
+    public void Save()
+    {
+        PanelSave.gameObject.SetActive(true);
+        //SceneManager.LoadScene("Load");
+    }
+
+    public void SaveHero()
+    {
+        CardMixer.Save(InputSaveName.text);
+        PanelSave.gameObject.SetActive(false);
+        Resume();
+    }
+
+
+    public void Load()
+    {
+        PanelLoad.gameObject.SetActive(true);
+        //SceneManager.LoadScene("Load");
+    }
+
+    public void LoadHero()
+    {
+        CardMixer.LoadFromFile(InputLoadName.text);
+        PanelLoad.gameObject.SetActive(false);
+        Resume();
+    }
+
     public void QuitGame()
     {
-
         Debug.Log("Quitting Game...");
         Application.Quit();
     }

@@ -17,7 +17,7 @@ public class QrcodeReader : MonoBehaviour
     void Start()
     {
         _reader = new QRCodeReader();
-        ButtonStartReading.onClick.AddListener(StartReading);
+        ButtonStartReading?.onClick.AddListener(StartReading);
     }
 
     // Update is called once per frame

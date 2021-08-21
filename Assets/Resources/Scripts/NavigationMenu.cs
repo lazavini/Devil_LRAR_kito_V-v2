@@ -15,9 +15,9 @@ public class NavigationMenu : MonoBehaviour
 
     void Start()
     {
-        ButtonBack.onClick.AddListener(Back);
-        ButtonClose.onClick.AddListener(Close);
-        ButtonHome.onClick.AddListener(Home);
+        ButtonBack?.onClick.AddListener(Back);
+        ButtonClose?.onClick.AddListener(Close);
+        ButtonHome?.onClick.AddListener(Home);
     }
 
     void Back()

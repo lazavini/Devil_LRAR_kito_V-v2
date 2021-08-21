@@ -20,7 +20,6 @@ public class LR_Menu : MonoBehaviour
 
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,15 +36,13 @@ public class LR_Menu : MonoBehaviour
             Menu.gameObject.SetActive(false);
 
         ImageProgressBar.fillAmount = CardMixer.UpdatePercentages();
-
-       
     }
 
     public void Play()
     {
-        if (!CardMixer.Player2Mixer.RandomGenerated)
+        if (!CardMixer.Player2Mixer.PlayerState.RandomGenerated)
             CardMixer.Player2Mixer.MixTrackedCards();
-        if(!CardMixer.Player1Mixer.RandomGenerated)
+        if(!CardMixer.Player1Mixer.PlayerState.RandomGenerated)
             CardMixer.Player1Mixer.MixTrackedCards();
     }
 

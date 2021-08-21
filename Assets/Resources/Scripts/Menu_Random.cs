@@ -33,10 +33,10 @@ public class Menu_Random : MonoBehaviour
     public void Random()
     {
         CardMixer.Player1Mixer.RandomCards();
-        Input_Hero.text = CardMixer.Player1Mixer.SeletedSkin;
-        Input_Power.text = CardMixer.Player1Mixer.SelectedEffect;
-        Input_Color.text = CardMixer.Player1Mixer.SelectedColor;
-        Input_Scale.text = CardMixer.Player1Mixer.Scale;
+        Input_Hero.text = CardMixer.Player1Mixer.PlayerState.SeletedSkin;
+        Input_Power.text = CardMixer.Player1Mixer.PlayerState.SelectedEffect;
+        Input_Color.text = CardMixer.Player1Mixer.PlayerState.SelectedColor;
+        Input_Scale.text = CardMixer.Player1Mixer.PlayerState.Scale;
         Panel_char.gameObject.SetActive(true);
         Tela_random.gameObject.SetActive(false);
     }

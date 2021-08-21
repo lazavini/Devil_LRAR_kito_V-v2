@@ -105,7 +105,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             var card = TrackedCardsCollection.CardsDataBase.FirstOrDefault(x => x.Name == mTrackableBehaviour.name);
             if (card == null) return;
 
-            if (card.Name == "card_player1" && CardMixer.Player1Mixer.RandomGenerated)
+            if (card.Name == "card_player1" && CardMixer.Player1Mixer.PlayerState.RandomGenerated)
             {
                 CardMixer.Player1Mixer.GeneratePlayer();
             }
