@@ -34,9 +34,9 @@ public class QrcodeReader : MonoBehaviour
         var result = _reader.decode(binBitmap);
         if (result != null)
         {
-            var result = result.Text;
-            var playerStates = JsonConvert.DeserializeObject<List<PlayerState>>((string)result);
-            CardMixer.LoadFromJson((string)result);
+            var resultTex = result.Text;
+            var playerStates = JsonConvert.DeserializeObject<List<PlayerState>>((string)resultTex);
+            CardMixer.LoadFromJson((string)resultTex);
             Reading = false;
             var pauseMenu = gameObject.GetComponentInChildren<PauseMenu>(true);
             pauseMenu.Resume();
