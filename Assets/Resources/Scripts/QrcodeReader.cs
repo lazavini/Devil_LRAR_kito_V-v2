@@ -1,4 +1,5 @@
 ﻿using Assets.Vuforia.Scripts.Cards;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using ZXing.QrCode;
 public class QrcodeReader : MonoBehaviour
 {
     public bool Reading { get; set; }
-    public Button ButtonStartReading { get; set; }
+    public Button ButtonStartReading;
     QRCodeReader _reader;
     void Start()
     {
@@ -34,7 +35,11 @@ public class QrcodeReader : MonoBehaviour
         if (result != null)
         {
             var resultado = result.Text;
+            var playerStates = JsonConvert.DeserializeObject<List<PlayerState>>(resultado);
+            CardMixer.LoadFromJson(resultado);
             Reading = false;
+            var pauseMenu = gameObject.GetComponentInChildren<PauseMenu>(true);
+            pauseMenu.Resume();
         }
     }
 

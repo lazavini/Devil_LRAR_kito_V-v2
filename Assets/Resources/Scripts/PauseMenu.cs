@@ -10,10 +10,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public Component PanelSave;
     public Component PanelLoad;
+    public UnityEngine.UI.Image QrcodeImage;
 
     public UnityEngine.UI.InputField InputSaveName;
     public UnityEngine.UI.InputField InputLoadName;
-
+    QrcodeWriter _qrcodeWriter = new QrcodeWriter();
 
 
     // Update is called once per frame
@@ -35,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        PanelLoad.gameObject.SetActive(false);
         Time.timeScale = 1f;
         GamiIsPause = false;
     }
@@ -66,6 +68,16 @@ public class PauseMenu : MonoBehaviour
         CardMixer.Save(InputSaveName.text);
         PanelSave.gameObject.SetActive(false);
         Resume();
+    }
+
+    public void ShowHeroQrcode()
+    {
+        string json = CardMixer.GenerateJson();
+        var texture =_qrcodeWriter.GenerateQrcode(json);
+        QrcodeImage.type = UnityEngine.UI.Image.Type.Simple;
+        QrcodeImage.preserveAspect = true;
+        QrcodeImage.useSpriteMesh = true;
+        QrcodeImage.sprite = Sprite.Create(texture, new Rect(0,0,200,200), new Vector2(0,0));
     }
 
 

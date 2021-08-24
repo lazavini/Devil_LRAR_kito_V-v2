@@ -100,6 +100,7 @@
     <Compile Include="Assets\Resources\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\PauseMenu2.cs" />
     <Compile Include="Assets\Resources\Scripts\QrcodeReader.cs" />
+    <Compile Include="Assets\Resources\Scripts\QrcodeWriter.cs" />
     <Compile Include="Assets\Resources\Scripts\SliderMenuPower.cs" />
     <Compile Include="Assets\Resources\Scripts\TrackedObject\Atributo.cs" />
     <Compile Include="Assets\Resources\Scripts\TrackedObject\IAtributo.cs" />
@@ -147,6 +148,8 @@
     <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Resources\ZXing\Color32LuminanceSource.cs" />
+    <Compile Include="Assets\Resources\ZXing\Color32Renderer.cs" />
     <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
     <None Include="Assets\Resources\Efeitos\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
     <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />

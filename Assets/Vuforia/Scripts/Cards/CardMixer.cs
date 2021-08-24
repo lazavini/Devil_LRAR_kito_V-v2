@@ -85,6 +85,8 @@ namespace Assets.Vuforia.Scripts.Cards
             return Percentage;
         }
 
+        
+
         public CharacterCard PlayerCard { get; set; }
         public bool PlayerGenerated { get; set; }
         public PlayerState PlayerState { get; set; }
@@ -199,17 +201,26 @@ namespace Assets.Vuforia.Scripts.Cards
         public static void Save(string saveName)
         {
             string destination = Application.persistentDataPath + $"/{saveName}.json";
-            var json = JsonConvert.SerializeObject(new List<PlayerState> { Player1Mixer.PlayerState, Player2Mixer.PlayerState });
-            File.WriteAllText(destination, json);
+            File.WriteAllText(destination, GenerateJson());
         }
 
 
         public static void LoadFromFile(string saveName)
         {
             string destination = Application.persistentDataPath + $"/{saveName}.json";
-            var states = JsonConvert.DeserializeObject<List<PlayerState>>(File.ReadAllText(destination));
+            LoadFromJson(File.ReadAllText(destination));
+        }
+
+        public static void LoadFromJson(string json)
+        {
+            var states = JsonConvert.DeserializeObject<List<PlayerState>>(json);
             Player1Mixer.LoadState(states[0]);
             Player2Mixer.LoadState(states[1]);
+        }
+
+        public static string GenerateJson()
+        {
+            return JsonConvert.SerializeObject(new List<PlayerState> { Player1Mixer.PlayerState, Player2Mixer.PlayerState });
         }
     }
 }
