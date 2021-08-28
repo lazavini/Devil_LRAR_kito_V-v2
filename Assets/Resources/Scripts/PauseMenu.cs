@@ -10,11 +10,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public Component PanelSave;
     public Component PanelLoad;
-    public UnityEngine.UI.Image QrcodeImage;
+    public Component PanelLoading;
 
+    public UnityEngine.UI.Image QrcodeImage;
+    QrcodeWriter _qrcodeWriter = new QrcodeWriter();
     public UnityEngine.UI.InputField InputSaveName;
     public UnityEngine.UI.InputField InputLoadName;
-    QrcodeWriter _qrcodeWriter = new QrcodeWriter();
+    public QrcodeReader QrcodeReader;
 
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+        QrcodeReader = gameObject.GetComponentInChildren<QrcodeReader>(true);
+        PanelLoading.gameObject.SetActive(QrcodeReader.Reading);
     }
 
     public void Resume()
@@ -84,13 +88,19 @@ public class PauseMenu : MonoBehaviour
     public void Load()
     {
         PanelLoad.gameObject.SetActive(true);
-        //SceneManager.LoadScene("Load");
     }
 
     public void LoadHero()
     {
-        CardMixer.LoadFromFile(InputLoadName.text);
+        CardMixer.LoadFromName(InputLoadName.text);
         PanelLoad.gameObject.SetActive(false);
+        Resume();
+    }
+
+    public void StartReadingQrcode()
+    {
+        PanelLoad.gameObject.SetActive(false);
+        QrcodeReader.StartReading();
         Resume();
     }
 

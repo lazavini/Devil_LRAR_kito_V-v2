@@ -43,7 +43,7 @@ public class QrcodeReader : MonoBehaviour
         }
     }
 
-    void StartReading()
+    public void StartReading()
     {
         Reading = true;
     }

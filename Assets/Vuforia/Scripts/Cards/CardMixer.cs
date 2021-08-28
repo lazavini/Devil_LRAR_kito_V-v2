@@ -92,6 +92,17 @@ namespace Assets.Vuforia.Scripts.Cards
         public PlayerState PlayerState { get; set; }
         public float Percentage { get; set; }
 
+        private static string SavePath
+        {
+            get
+            {
+                var folder = $"{Application.persistentDataPath}/save/";
+                if (!Directory.Exists(folder))
+                    Directory.CreateDirectory(folder);
+                return folder;
+            }
+        }
+
         public void RandomCards()
         {
             var firstCard = PlayerCard;
@@ -198,16 +209,36 @@ namespace Assets.Vuforia.Scripts.Cards
         }
     
 
+        public static IEnumerable<string> GetSavesNames()
+        {
+            var files = new List<string>();
+            foreach(var path in GetSaves())
+            {
+                var fileInfo = new FileInfo(path);
+                files.Add(fileInfo.Name.Replace(fileInfo.Extension,""));
+            }
+            return files.OrderBy(x => x);
+        }
+
+        public static IEnumerable<string> GetSaves()
+        {
+            return Directory.EnumerateFiles(SavePath);
+        }
+
         public static void Save(string saveName)
         {
-            string destination = Application.persistentDataPath + $"/{saveName}.json";
+            string destination = $"{SavePath}{saveName}.json";
             File.WriteAllText(destination, GenerateJson());
         }
 
-
-        public static void LoadFromFile(string saveName)
+        public static void LoadFromFile(string file)
         {
-            string destination = Application.persistentDataPath + $"/{saveName}.json";
+            LoadFromJson(File.ReadAllText(file));
+        }
+
+        public static void LoadFromName(string saveName)
+        {
+            string destination = $"{SavePath}{saveName}.json";
             LoadFromJson(File.ReadAllText(destination));
         }
 

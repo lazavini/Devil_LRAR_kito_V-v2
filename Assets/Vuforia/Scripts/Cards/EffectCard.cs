@@ -64,9 +64,7 @@ namespace Assets.Vuforia.Scripts.Cards
             var oldEffect = card.CardComponent?.gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(x => x.transform.name == effectName);
             if (oldEffect != null)
             {
-                oldEffect.gameObject.SetActive(!oldEffect.gameObject.activeSelf);
-                if(oldEffect.gameObject.activeSelf)
-                    SelectedEffect = effectName;
+                SelectedEffect = effectName;
                 return;
             }
 

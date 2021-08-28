@@ -85,6 +85,7 @@ namespace Assets.Vuforia.Scripts.Cards
             var newComponent = Transform.Instantiate(skin);
             newComponent.name = skinName;
             newComponent.position = card.CardComponent.transform.position;
+            //newComponent.rotation = skin.rotation;
             newComponent.gameObject.SetActive(true);
             newComponent.parent = card.CardComponent.transform;
             SelectedSkin = skinName;

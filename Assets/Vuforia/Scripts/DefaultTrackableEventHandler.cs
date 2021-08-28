@@ -107,7 +107,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
             if (card.Name == "card_player1" && CardMixer.Player1Mixer.PlayerState.RandomGenerated)
             {
-                CardMixer.Player1Mixer.GeneratePlayer();
+                CardMixer.Player1Mixer.RegeneratePlayer();
             }
 
             card.ChangeCardComponent(mTrackableBehaviour);
