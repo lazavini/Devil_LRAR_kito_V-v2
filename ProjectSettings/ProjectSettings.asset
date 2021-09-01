@@ -97,7 +97,7 @@ PlayerSettings:
   visibleInBackground: 1
   allowFullscreenSwitch: 1
   graphicsJobMode: 0
-  fullscreenMode: 1
+  fullscreenMode: 3
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -517,6 +517,8 @@ PlayerSettings:
     - Vuforia
   m_BuildTargetEnableVuforiaSettings:
   - m_BuildTarget: Android
+    m_Enabled: 1
+  - m_BuildTarget: Standalone
     m_Enabled: 1
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
