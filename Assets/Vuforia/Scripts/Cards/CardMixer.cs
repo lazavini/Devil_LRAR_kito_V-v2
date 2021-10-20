@@ -96,10 +96,17 @@ namespace Assets.Vuforia.Scripts.Cards
         {
             get
             {
-                var folder = $"{Application.persistentDataPath}/save/";
-                if (!Directory.Exists(folder))
-                    Directory.CreateDirectory(folder);
-                return folder;
+                try
+                {
+                    var folder = $"{Application.persistentDataPath}/";
+                    if (!Directory.Exists(folder))
+                        Directory.CreateDirectory(folder);
+                    return folder;
+                }
+                catch (Exception)
+                {
+                    return $"{Application.persistentDataPath}/";
+                }
             }
         }
 
@@ -233,12 +240,16 @@ namespace Assets.Vuforia.Scripts.Cards
 
         public static void LoadFromFile(string file)
         {
+            if (!File.Exists(file))
+                return;
             LoadFromJson(File.ReadAllText(file));
         }
 
         public static void LoadFromName(string saveName)
         {
             string destination = $"{SavePath}{saveName}.json";
+            if (!File.Exists(destination))
+                return;
             LoadFromJson(File.ReadAllText(destination));
         }
 

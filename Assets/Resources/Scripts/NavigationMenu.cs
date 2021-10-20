@@ -11,6 +11,9 @@ public class NavigationMenu : MonoBehaviour
     public Button ButtonBack;
     public Button ButtonClose;
     public Button ButtonHome;
+    public Button ButtonClosePanel;
+    public Component PanelToClose;
+
 
 
     void Start()
@@ -18,6 +21,8 @@ public class NavigationMenu : MonoBehaviour
         ButtonBack?.onClick.AddListener(Back);
         ButtonClose?.onClick.AddListener(Close);
         ButtonHome?.onClick.AddListener(Home);
+        ButtonClosePanel?.onClick.AddListener(ClosePanel);
+
     }
 
     void Back()
@@ -35,5 +40,10 @@ public class NavigationMenu : MonoBehaviour
     {
         NavigationHistory.PreviousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Main");
+    }
+
+    void ClosePanel()
+    {
+        PanelToClose?.gameObject?.SetActive(false);
     }
 }

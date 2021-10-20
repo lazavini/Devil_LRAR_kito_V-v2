@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Menu_Load : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class Menu_Load : MonoBehaviour
 
     void Start()
     {
-        PopulateHerosDropdown();
+        try
+        {
+            PopulateHerosDropdown();
+        }
+        catch (Exception) { }
     }
 
     private void PopulateHerosDropdown()
@@ -63,8 +68,12 @@ public class Menu_Load : MonoBehaviour
 
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        var qrcodeReader = GameObject.FindObjectOfType<QrcodeReader>();
-        qrcodeReader.StartReading();
-        SceneManager.sceneLoaded -= SceneManager_sceneLoaded; 
+        try
+        {
+            var qrcodeReader = GameObject.FindObjectOfType<QrcodeReader>();
+            qrcodeReader.StartReading();
+            SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+        }
+        catch(Exception) { }
     }
 }

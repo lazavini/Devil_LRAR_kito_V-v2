@@ -14,6 +14,7 @@ public class QrcodeReader : MonoBehaviour
 {
     public bool Reading { get; set; }
     public Button ButtonStartReading;
+    private bool _isFrameSet = false;
     QRCodeReader _reader;
     void Start()
     {
@@ -27,20 +28,37 @@ public class QrcodeReader : MonoBehaviour
         if (!Reading)
             return;
 
-        var cameraFeed = CameraDevice.Instance.GetCameraImage(PIXEL_FORMAT.RGBA8888);
-        var source = new RGBLuminanceSource(cameraFeed.Pixels, cameraFeed.Width, cameraFeed.Height, RGBLuminanceSource.BitmapFormat.RGBA32);
-        var binarizer = new HybridBinarizer(source);
-        var binBitmap = new BinaryBitmap(binarizer);
-        var result = _reader.decode(binBitmap);
-        if (result != null)
+        if (!_isFrameSet)
         {
-            var resultTex = result.Text;
-            var playerStates = JsonConvert.DeserializeObject<List<PlayerState>>((string)resultTex);
-            CardMixer.LoadFromJson((string)resultTex);
-            Reading = false;
-            var pauseMenu = gameObject.GetComponentInChildren<PauseMenu>(true);
-            pauseMenu.Resume();
+            try
+            {
+                _isFrameSet = CameraDevice.Instance.SetFrameFormat(PIXEL_FORMAT.GRAYSCALE, true);
+            }
+            catch (Exception) { }
         }
+        
+        try
+        {
+            var cameraFeed = CameraDevice.Instance.GetCameraImage(PIXEL_FORMAT.GRAYSCALE);
+            var source = new RGBLuminanceSource(cameraFeed.Pixels, cameraFeed.Width, cameraFeed.Height, RGBLuminanceSource.BitmapFormat.Gray8);
+            
+
+
+            
+            var binarizer = new HybridBinarizer(source);
+            var binBitmap = new BinaryBitmap(binarizer);
+            var result = _reader.decode(binBitmap);
+            if (result != null)
+            {
+                var resultTex = result.Text;
+                var playerStates = JsonConvert.DeserializeObject<List<PlayerState>>((string)resultTex);
+                CardMixer.LoadFromJson((string)resultTex);
+                Reading = false;
+                var pauseMenu = gameObject.GetComponentInChildren<PauseMenu>(true);
+                pauseMenu.Resume();
+            }
+        }
+        catch (Exception) { }
     }
 
     public void StartReading()

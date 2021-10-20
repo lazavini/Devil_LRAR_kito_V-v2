@@ -672,9 +672,9 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 390, y: -196.94}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -146.79993, y: -162.54001}
   m_SizeDelta: {x: 78.672485, y: 25.81889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445676646
@@ -870,9 +870,9 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482, y: -245}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 55, y: 69}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619306220
@@ -1067,9 +1067,9 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 389.8, y: -76.4}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -147, y: -42}
   m_SizeDelta: {x: 78.672485, y: 25.81889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808716206
@@ -1258,7 +1258,7 @@ RectTransform:
   m_GameObject: {fileID: 892843397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.6786, y: 3.6786, z: 3.6786}
+  m_LocalScale: {x: 1.9663382, y: 2.392455, z: 3.6786}
   m_Children:
   - {fileID: 981143058}
   - {fileID: 1391432367}
@@ -1266,9 +1266,9 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -97, y: 11}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 169, y: 11}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892843399
@@ -1460,10 +1460,10 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: 61.7}
-  m_SizeDelta: {x: 77.21196, y: 34.64515}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -145.79993, y: 96.09999}
+  m_SizeDelta: {x: 77.211975, y: 34.64515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &949403749
 MonoBehaviour:
@@ -1661,10 +1661,10 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 239.1}
-  m_SizeDelta: {x: 97.34454, y: 15.032219}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -10, y: -60.899994}
+  m_SizeDelta: {x: 97.34454, y: 15.032227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1273321765
 MonoBehaviour:
@@ -2135,9 +2135,9 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -480, y: 242}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 66, y: -74}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579288289
@@ -2412,9 +2412,9 @@ RectTransform:
   m_Father: {fileID: 1920596174}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 489, y: 247}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -53, y: -61}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917341294
@@ -2553,6 +2553,8 @@ MonoBehaviour:
   ButtonBack: {fileID: 619306220}
   ButtonClose: {fileID: 1917341294}
   ButtonHome: {fileID: 1579288289}
+  ButtonClosePanel: {fileID: 0}
+  PanelToClose: {fileID: 0}
 --- !u!114 &1920596176
 MonoBehaviour:
   m_ObjectHideFlags: 0
