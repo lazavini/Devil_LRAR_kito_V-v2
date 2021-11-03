@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/charl/Desktop/devil.apk
+C:/Users/diguest/Desktop/MakeHeros_alpha.apk
 SceneListBegin?
 Assets/Scenes/Main.unity
 Assets/Scenes/LR_cards.unity
