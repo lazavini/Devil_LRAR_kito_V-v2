@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44461405, g: 0.49412715, b: 0.57338756, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -280,10 +280,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'How To Use
-
-    Print and place cards in front of cell phone camera to interact with powerful
-    heroes.'
+  m_Text: "Como usar\nImprima e coloque as cartas na frente da c\xE2mera para interagir
+    com herois poderosos."
 --- !u!222 &334174872
 CanvasRenderer:
   m_ObjectHideFlags: 0

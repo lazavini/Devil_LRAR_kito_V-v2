@@ -30,7 +30,8 @@ public class loadingtext : MonoBehaviour {
         if (a == 0)
         {
             textStatus.text = "Coloque a carta player...";
-            textInstruction.text = "Add player card";
+            textInstruction.text = "Coloque a carta player";
+            //textInstruction.text = "Add player card";
         }
 
         if(a == 0.25f)
