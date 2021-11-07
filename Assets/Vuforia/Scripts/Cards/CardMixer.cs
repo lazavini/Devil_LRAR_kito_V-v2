@@ -192,10 +192,10 @@ namespace Assets.Vuforia.Scripts.Cards
             if (PlayerGenerated) return;
 
             var firstCard = PlayerCard;
+
             var effectsCards = TrackedCardsCollection.EffectsCards;
             var effectCard = effectsCards.FirstOrDefault();
             effectCard.SelectedEffect = PlayerState.SelectedEffect;
-
             var skinCards = TrackedCardsCollection.SkinCards;
             var skinCard = skinCards.FirstOrDefault();
             skinCard.SelectedSkin = PlayerState.SeletedSkin;
@@ -212,7 +212,7 @@ namespace Assets.Vuforia.Scripts.Cards
             firstCard.Mix(effectCard);
             //firstCard.Mix(scaleCard);
             firstCard.Mix(colorCard);
-            PlayerGenerated = true;
+            PlayerGenerated = firstCard.CardComponent != null;
         }
     
 

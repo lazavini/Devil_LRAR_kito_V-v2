@@ -8,6 +8,7 @@ TagManager:
   - Devil
   - skin
   - effect
+  - card-modifier
   layers:
   - Default
   - TransparentFX

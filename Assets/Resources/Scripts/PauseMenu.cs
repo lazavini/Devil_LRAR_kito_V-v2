@@ -87,14 +87,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Load()
     {
-        PanelLoad.gameObject.SetActive(true);
+        Resume();
+        SceneManager.LoadScene("Load");
     }
 
     public void LoadHero()
     {
-        CardMixer.LoadFromName(InputLoadName.text);
-        PanelLoad.gameObject.SetActive(false);
-        Resume();
+        SceneManager.LoadScene("Load");
     }
 
     public void StartReadingQrcode()

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Vuforia;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Assets.Vuforia.Scripts.Cards
 {
@@ -23,9 +25,13 @@ namespace Assets.Vuforia.Scripts.Cards
         public string Animation { get; set; }
         public Animator Animator { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
         public TrackableBehaviour.Status Status { get; set; }
+        public IEnumerable<Canvas> Canvas { get; set; }
 
         public virtual void CardTrackChanged(TrackableBehaviour.Status status)
         {
+            if (status == Status)
+                return;
+
             if (status == TrackableBehaviour.Status.TRACKED)
             {
                 Show();
@@ -56,8 +62,8 @@ namespace Assets.Vuforia.Scripts.Cards
             if (CardComponent == null) return;
             var rendererComponents = CardComponent.GetComponentsInChildren<Renderer>(true);
             var colliderComponents = CardComponent.GetComponentsInChildren<Collider>(true);
-            var canvasComponents = CardComponent.GetComponentsInChildren<Canvas>(true);
-
+            if(Canvas == null)
+                Canvas = CardComponent.GetComponentsInChildren<Canvas>(true);
             // Disable rendering:
             foreach (var component in rendererComponents)
                 component.enabled = false;
@@ -67,8 +73,19 @@ namespace Assets.Vuforia.Scripts.Cards
                 component.enabled = false;
 
             // Disable canvas':
-            foreach (var component in canvasComponents)
-                component.enabled = false;
+            foreach (var component in Canvas)
+            {
+                var mainContainer = GameObject.FindObjectsOfType<Component>()
+                    .FirstOrDefault(x => x.name == "MainContainer");
+
+                var oldMenu = mainContainer.gameObject.GetComponentsInChildren<Canvas>(true)
+                    .FirstOrDefault(x => x.name == component.name);
+
+                if (oldMenu != null)
+                    oldMenu.gameObject.SetActive(false);
+
+                component.gameObject.SetActive(false);
+            }
         }
 
         private void Show()
@@ -76,7 +93,8 @@ namespace Assets.Vuforia.Scripts.Cards
             if (CardComponent == null) return;
             var rendererComponents = CardComponent.GetComponentsInChildren<Renderer>(true);
             var colliderComponents = CardComponent.GetComponentsInChildren<Collider>(true);
-            var canvasComponents = CardComponent.GetComponentsInChildren<Canvas>(true);
+            if (Canvas == null)
+                Canvas = CardComponent.GetComponentsInChildren<Canvas>(true);
             //Enable rendering:
             foreach (var component in rendererComponents)
             {
@@ -86,9 +104,32 @@ namespace Assets.Vuforia.Scripts.Cards
             foreach (var component in colliderComponents)
                 component.enabled = true;
             // Enable canvas':
-            foreach (var component in canvasComponents)
-                component.enabled = true;
+            foreach (var component in Canvas)
+            {
+                component.gameObject.SetActive(true);
 
+                var mainContainer = GameObject.FindObjectsOfType<Component>()
+                    .FirstOrDefault(x => x.name == "MainContainer");
+
+
+                var oldMenu = mainContainer.gameObject.GetComponentsInChildren<Canvas>(true)
+                    .FirstOrDefault(x => x.name == component.name);
+
+                if (oldMenu != null)
+                {
+                    oldMenu.gameObject.SetActive(true);
+                }
+                else
+                {
+                    var allCanvas = mainContainer.GetComponentsInChildren<Canvas>();
+                    var maxY = (allCanvas != null && allCanvas.Any()) ?
+                        allCanvas.Max(x => x.gameObject.transform.position.y)
+                        : 0;
+                    maxY += (float)0.1;
+                    //component.transform.SetPositionAndRotation(new Vector3(0, 0), component.transform.rotation);
+                    component.transform.parent = mainContainer.transform;
+                }
+            }
         }
     }
 }

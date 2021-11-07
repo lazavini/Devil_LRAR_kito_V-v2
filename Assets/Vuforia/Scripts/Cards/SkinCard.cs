@@ -15,7 +15,7 @@ namespace Assets.Vuforia.Scripts.Cards
         public string LastSelectedModel { get; set; }
         public string SelectedSkin { get; set; }
 
-        Dropdown DropDownModel => Status == TrackableBehaviour.Status.TRACKED ? CardComponent.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
+        Dropdown DropDownModel => Status == TrackableBehaviour.Status.TRACKED ? Canvas.FirstOrDefault().gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
 
         public SkinCard(string name,
             string sound, 

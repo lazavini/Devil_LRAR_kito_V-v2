@@ -14,7 +14,7 @@ namespace Assets.Vuforia.Scripts.Cards
         public float? X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
-        Slider SliderScale => Status == TrackableBehaviour.Status.TRACKED ? CardComponent.gameObject.GetComponentsInChildren<Slider>().FirstOrDefault(x => x.name == "Slider") : null;
+        Slider SliderScale => Status == TrackableBehaviour.Status.TRACKED ? Canvas.FirstOrDefault().gameObject.GetComponentsInChildren<Slider>().FirstOrDefault(x => x.name == "Slider") : null;
 
         public ScaleCard(string name, 
             string sound, 
@@ -57,8 +57,11 @@ namespace Assets.Vuforia.Scripts.Cards
             else
                 X = null;
 
-            CardComponent.gameObject.GetComponentsInChildren<Text>().FirstOrDefault(x => x.name == "Text").text = $"Scale: {scale}";
-            card.CardComponent.GetComponentsInChildren<Component>(true).FirstOrDefault(x => x.tag == "skin").transform.localScale = new Vector3(scale, scale, scale);
+            Canvas.FirstOrDefault().gameObject.GetComponentsInChildren<Text>().FirstOrDefault(x => x.name == "Text").text = $"Scale: {scale}";
+            var skin = card.CardComponent.GetComponentsInChildren<Component>(true)
+                .FirstOrDefault(x => x.tag == "skin");
+            if(skin != null)
+                skin.transform.localScale = new Vector3(scale, scale, scale);
         }
     }
 }

@@ -205,4 +205,14 @@ public class CharacterCard : ICard
         }
         card.Mix(this);
     }
+
+    public void DestroyObjects()
+    {
+        var oldSkins = CardComponent?.gameObject.GetComponentsInChildren<Transform>(true)
+            .Where(x => x.name.Contains("player")) ?? Enumerable.Empty<Transform>();
+
+        foreach (var oldskin in ActiveComponents.Where(x => x.tag == "skin" || x.tag == "effect"))
+            oldskin.gameObject.SetActive(false);
+            //GameObject.Destroy(oldskin.gameObject);
+    }
 }
