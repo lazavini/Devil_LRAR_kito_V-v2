@@ -80,6 +80,8 @@
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\Resources\Fighter Pack Bundle FREE\Code\CameraControl.cs" />
+    <Compile Include="Assets\Resources\Fighter Pack Bundle FREE\Code\FighterAnimationDemoFREE.cs" />
     <Compile Include="Assets\Resources\Scripts\ActiveModel.cs" />
     <Compile Include="Assets\Resources\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Resources\Scripts\dataTarget.cs" />

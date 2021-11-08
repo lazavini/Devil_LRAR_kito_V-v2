@@ -184,6 +184,7 @@ namespace Assets.Vuforia.Scripts.Cards
         public void LoadState(PlayerState playerState)
         {
             PlayerState = playerState;
+            PlayerState.IsLoading = true;
             RegeneratePlayer();
         }
     
@@ -213,6 +214,7 @@ namespace Assets.Vuforia.Scripts.Cards
             //firstCard.Mix(scaleCard);
             firstCard.Mix(colorCard);
             PlayerGenerated = firstCard.CardComponent != null;
+            PlayerState.IsLoading = !PlayerGenerated;
         }
     
 

@@ -29,19 +29,21 @@ namespace Assets.Vuforia.Scripts.Cards
             Skins = new List<string> 
             { 
                 "Turtle",  
-                "Slime", 
-                "Soldier", 
-                "SoldierPoly",
-                "Knight", 
-                "HumanoidBot",
-                "BattleSpider01", 
-                "BattleSpider02", 
+                "Slime",
+                "SoldadoEspacial",
+                "Astronauta",
+                "Knight",
+                "BOT",
+                "AranhaMonster",
+                "AranhaMonster2", 
                 "SkeletonArmor",
-                "Skeleton_NoArmor",
+                "Skeleton_Nu",
                 "spider",
-                "SoldierHi",
-                "Player1",
+                "SoldadoHigh",
                 "Devil",
+                "Male",
+                "Female",
+                "Berserker",
                 "tractor"
             };
         }

@@ -107,9 +107,9 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
             if (card.CardType == CardType.Character)
             {
-                if(card.Name.Contains("player1"))
+                if(card.Name.Contains("player1") && (CardMixer.Player1Mixer.PlayerState.RandomGenerated || CardMixer.Player1Mixer.PlayerState.IsLoading))
                     CardMixer.Player1Mixer.GeneratePlayer();
-                else
+                if (card.Name.Contains("player2") && (CardMixer.Player2Mixer.PlayerState.RandomGenerated || CardMixer.Player2Mixer.PlayerState.IsLoading))
                     CardMixer.Player2Mixer.GeneratePlayer();
             }
 

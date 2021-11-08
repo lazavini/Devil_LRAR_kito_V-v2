@@ -13,5 +13,6 @@ namespace Assets.Vuforia.Scripts.Cards
         public string Scale { get; set; }
         public string SelectedColor { get; set; }
         public bool RandomGenerated { get; set; }
+        public bool IsLoading { get; set; }
     }
 }
