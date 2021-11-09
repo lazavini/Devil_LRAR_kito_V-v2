@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Editor\SlimUIWindow.cs" />
     <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/diguest/Documents/Devil_LRAR_kito_V-v2/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>

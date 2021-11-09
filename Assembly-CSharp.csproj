@@ -68,8 +68,6 @@
     <Compile Include="Assets\loadingBar\scripts\rotatetotate.cs" />
     <Compile Include="Assets\loadingBar\scripts\SimpleLoading.cs" />
     <Compile Include="Assets\loadingBar\scripts\simplerotate.cs" />
-    <Compile Include="Assets\Resources\Chibi Mummy\Misc\Scripts\buttonControl_script.cs" />
-    <Compile Include="Assets\Resources\Chibi Mummy\Misc\Scripts\CharMovement.cs" />
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
@@ -108,15 +106,6 @@
     <Compile Include="Assets\Resources\Scripts\TrackedObject\IAtributo.cs" />
     <Compile Include="Assets\Resources\Scripts\TrackedObject\Objeto.cs" />
     <Compile Include="Assets\Resources\Scripts\TrackedObject\ObjetoAtributos.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\CheckSFXVolume.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\ExtraLinks.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\OptionsMenu.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\ResetDemo.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\ThemeEditor.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\ThemeUI.cs" />
-    <Compile Include="Assets\Resources\SlimUI\Modern Menu 1\Scripts\ThemeUIElement.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -184,7 +173,6 @@
     <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Resources\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Resources\Chibi Mummy\readme.txt" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />

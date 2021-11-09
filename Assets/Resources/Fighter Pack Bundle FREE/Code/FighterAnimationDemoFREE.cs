@@ -21,7 +21,7 @@ public class FighterAnimationDemoFREE : MonoBehaviour {
 		fighter.transform.position = new Vector3(0,0,0);
 	}
 
-	void OnGUI () 
+	/*void OnGUI () 
 	{
 		if (GUI.RepeatButton (new Rect (815, 535, 100, 30), "Reset Scene")) 
 		{
@@ -53,5 +53,5 @@ public class FighterAnimationDemoFREE : MonoBehaviour {
 		{
 			animator.SetTrigger("PunchTrigger");
 		}
-	}
+	}*/
 }
