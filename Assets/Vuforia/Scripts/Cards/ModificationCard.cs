@@ -72,11 +72,13 @@ namespace Assets.Vuforia.Scripts.Cards
             foreach (var component in colliderComponents)
                 component.enabled = false;
 
+            var mainContainer = GameObject.FindObjectsOfType<Component>()
+                    .FirstOrDefault(x => x.name == "MainContainer");
             // Disable canvas':
             foreach (var component in Canvas)
             {
-                var mainContainer = GameObject.FindObjectsOfType<Component>()
-                    .FirstOrDefault(x => x.name == "MainContainer");
+                if (mainContainer == null)
+                    break;
 
                 var oldMenu = mainContainer.gameObject.GetComponentsInChildren<Canvas>(true)
                     .FirstOrDefault(x => x.name == component.name);
@@ -104,16 +106,15 @@ namespace Assets.Vuforia.Scripts.Cards
             foreach (var component in colliderComponents)
                 component.enabled = true;
             // Enable canvas':
+            var mainContainer = GameObject.FindObjectsOfType<Component>()
+                    .FirstOrDefault(x => x.name == "MainContainer");
+
             foreach (var component in Canvas)
             {
                 component.gameObject.SetActive(true);
-
-                var mainContainer = GameObject.FindObjectsOfType<Component>()
-                    .FirstOrDefault(x => x.name == "MainContainer");
-
-
                 var oldMenu = mainContainer.gameObject.GetComponentsInChildren<Canvas>(true)
                     .FirstOrDefault(x => x.name == component.name);
+
 
                 if (oldMenu != null)
                 {
@@ -121,14 +122,33 @@ namespace Assets.Vuforia.Scripts.Cards
                 }
                 else
                 {
-                    var allCanvas = mainContainer.GetComponentsInChildren<Canvas>();
-                    var maxY = (allCanvas != null && allCanvas.Any()) ?
-                        allCanvas.Max(x => x.gameObject.transform.position.y)
-                        : 0;
-                    maxY += (float)0.1;
-                    //component.transform.SetPositionAndRotation(new Vector3(0, 0), component.transform.rotation);
                     component.transform.parent = mainContainer.transform;
                 }
+            }
+            RecreateMenus();
+        }
+
+        void RecreateMenus()
+        {
+            if (CardComponent == null) return;
+            
+            var mainContainer = GameObject.FindObjectsOfType<Component>()
+                    .FirstOrDefault(x => x.name == "MainContainer");
+            var allPanels = mainContainer.GetComponentsInChildren<RectTransform>()
+                .Where(x => x.name == "Panel")
+                .ToArray();
+
+            float y = 0;
+            for(var i = 0; i < allPanels.Length; i++)
+            {
+                var panel = allPanels[i];
+                float z = panel.gameObject.transform.localPosition.z;
+                float xPosition = panel.gameObject.transform.localPosition.x;
+                var children = panel.gameObject.GetComponentsInChildren<RectTransform>()
+                    .Where(x => x.name != "Panel");
+                var maxHeight = children.Max(x => x.rect.height);
+                panel.localPosition = new Vector3(xPosition, y + panel.rect.height, z);
+                y += maxHeight;
             }
         }
     }
