@@ -62,8 +62,7 @@ namespace Assets.Vuforia.Scripts.Cards
             if (CardComponent == null) return;
             var rendererComponents = CardComponent.GetComponentsInChildren<Renderer>(true);
             var colliderComponents = CardComponent.GetComponentsInChildren<Collider>(true);
-            if(Canvas == null)
-                Canvas = CardComponent.GetComponentsInChildren<Canvas>(true);
+            
             // Disable rendering:
             foreach (var component in rendererComponents)
                 component.enabled = false;
@@ -74,20 +73,11 @@ namespace Assets.Vuforia.Scripts.Cards
 
             var mainContainer = GameObject.FindObjectsOfType<Component>()
                     .FirstOrDefault(x => x.name == "MainContainer");
-            // Disable canvas':
-            foreach (var component in Canvas)
-            {
-                if (mainContainer == null)
-                    break;
 
-                var oldMenu = mainContainer.gameObject.GetComponentsInChildren<Canvas>(true)
-                    .FirstOrDefault(x => x.name == component.name);
+            var modificationMenu = mainContainer.gameObject.GetComponentsInChildren<RectTransform>(true)
+                .FirstOrDefault(x => Name == x.name);
 
-                if (oldMenu != null)
-                    oldMenu.gameObject.SetActive(false);
-
-                component.gameObject.SetActive(false);
-            }
+            modificationMenu?.gameObject?.SetActive(false);
         }
 
         private void Show()
@@ -108,48 +98,9 @@ namespace Assets.Vuforia.Scripts.Cards
             // Enable canvas':
             var mainContainer = GameObject.FindObjectsOfType<Component>()
                     .FirstOrDefault(x => x.name == "MainContainer");
-
-            foreach (var component in Canvas)
-            {
-                component.gameObject.SetActive(true);
-                var oldMenu = mainContainer.gameObject.GetComponentsInChildren<Canvas>(true)
-                    .FirstOrDefault(x => x.name == component.name);
-
-
-                if (oldMenu != null)
-                {
-                    oldMenu.gameObject.SetActive(true);
-                }
-                else
-                {
-                    component.transform.parent = mainContainer.transform;
-                }
-            }
-            RecreateMenus();
-        }
-
-        void RecreateMenus()
-        {
-            if (CardComponent == null) return;
-            
-            var mainContainer = GameObject.FindObjectsOfType<Component>()
-                    .FirstOrDefault(x => x.name == "MainContainer");
-            var allPanels = mainContainer.GetComponentsInChildren<RectTransform>()
-                .Where(x => x.name == "Panel")
-                .ToArray();
-
-            float y = 0;
-            for(var i = 0; i < allPanels.Length; i++)
-            {
-                var panel = allPanels[i];
-                float z = panel.gameObject.transform.localPosition.z;
-                float xPosition = panel.gameObject.transform.localPosition.x;
-                var children = panel.gameObject.GetComponentsInChildren<RectTransform>()
-                    .Where(x => x.name != "Panel");
-                var maxHeight = children.Max(x => x.rect.height);
-                panel.localPosition = new Vector3(xPosition, y + panel.rect.height, z);
-                y += maxHeight;
-            }
+            var modificationMenu = mainContainer.gameObject.GetComponentsInChildren<RectTransform>(true)
+                .FirstOrDefault(x => Name == x.name);
+            modificationMenu?.gameObject?.SetActive(true);
         }
     }
 }
