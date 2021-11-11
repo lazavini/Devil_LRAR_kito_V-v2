@@ -3936,6 +3936,7 @@ GameObject:
   - component: {fileID: 332670667}
   - component: {fileID: 332670666}
   - component: {fileID: 332670665}
+  - component: {fileID: 332670668}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -3961,7 +3962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200.21, y: 0}
+  m_AnchoredPosition: {x: -200, y: 0}
   m_SizeDelta: {x: 400.41922, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &332670665
@@ -4029,6 +4030,25 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &332670668
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332670663}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4c8af01166982e44b33da658e64db2e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &340005496
 GameObject:
   m_ObjectHideFlags: 0
@@ -5853,7 +5873,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643666046}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &643666050
 Camera:
   m_ObjectHideFlags: 0
@@ -8419,8 +8439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 80, y: 130}
-  m_SizeDelta: {x: 181.2029, y: 37.2002}
+  m_AnchoredPosition: {x: 73.7, y: 180.6}
+  m_SizeDelta: {x: 212.66093, y: 75.34715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959121198
 MonoBehaviour:
@@ -8938,7 +8958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 49.9, y: -0.000015258789}
+  m_AnchoredPosition: {x: 49.9, y: 0}
   m_SizeDelta: {x: -49.899994, y: 471.77417}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1187553857
@@ -14530,7 +14550,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1427584609}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.5606393
+  m_Size: 0.75322706
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
