@@ -78,8 +78,8 @@
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Efeitos\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
-    <Compile Include="Assets\Resources\Fighter Pack Bundle FREE\Code\CameraControl.cs" />
-    <Compile Include="Assets\Resources\Fighter Pack Bundle FREE\Code\FighterAnimationDemoFREE.cs" />
+    <Compile Include="Assets\Resources\Models3D\Fighter Pack Bundle FREE\Code\CameraControl.cs" />
+    <Compile Include="Assets\Resources\Models3D\Fighter Pack Bundle FREE\Code\FighterAnimationDemoFREE.cs" />
     <Compile Include="Assets\Resources\Scripts\ActiveModel.cs" />
     <Compile Include="Assets\Resources\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Resources\Scripts\dataTarget.cs" />
@@ -89,7 +89,6 @@
     <Compile Include="Assets\Resources\Scripts\loadingtext.cs" />
     <Compile Include="Assets\Resources\Scripts\LR_Menu.cs" />
     <Compile Include="Assets\Resources\Scripts\Main_Menu.cs" />
-    <Compile Include="Assets\Resources\Scripts\Main_Meu.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu_how_to_use.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu_Load.cs" />
     <Compile Include="Assets\Resources\Scripts\Menu_Random.cs" />
@@ -164,7 +163,7 @@
     <None Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Resources\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\Resources\tractor and planter\readme.txt" />
+    <None Include="Assets\Resources\Models3D\tractor and planter\readme.txt" />
     <None Include="Assets\Resources\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />
     <None Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
