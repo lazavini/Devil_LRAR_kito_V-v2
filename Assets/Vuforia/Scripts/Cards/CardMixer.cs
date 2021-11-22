@@ -164,7 +164,7 @@ namespace Assets.Vuforia.Scripts.Cards
                         break;
                     case CardType.Scale:
                         var scaleCard = (ScaleCard)c;
-                        PlayerState.Scale = scaleCard.X.ToString();
+                        PlayerState.Scale = scaleCard.Y.ToString();
                         scaleCard.X = null;
                         break;
                     case CardType.Effect:
@@ -206,12 +206,10 @@ namespace Assets.Vuforia.Scripts.Cards
             var skinCards = TrackedCardsCollection.SkinCards;
             var skinCard = skinCards.FirstOrDefault();
             skinCard.SelectedSkin = PlayerState.SeletedSkin;
-
-
             var scaleCards = TrackedCardsCollection.ScaleCards;
             var scaleCard = scaleCards.FirstOrDefault();
-            //scaleCard.X = float.Parse(Scale);
-
+            scaleCard.X = float.Parse(PlayerState.Scale);
+            firstCard.Mix(scaleCard);
             var colorCards = TrackedCardsCollection.ColorCards;
             var colorCard = colorCards.FirstOrDefault();
             colorCard.SelectedColor = "#" + PlayerState.SelectedColor;
