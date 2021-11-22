@@ -11,7 +11,7 @@ namespace Assets.Vuforia.Scripts.Cards
 {
     public class ColorCard : ModificationCard
     {
-        FlexibleColorPicker ColorPicker => Status == TrackableBehaviour.Status.TRACKED ? Canvas.FirstOrDefault().gameObject.GetComponentInChildren<FlexibleColorPicker>(true) : null;
+        FlexibleColorPicker ColorPicker => Status == TrackableBehaviour.Status.TRACKED ? CardPanel.gameObject.GetComponentInChildren<FlexibleColorPicker>(true) : null;
         public string SelectedColor { get; set; }
         public ColorCard(string name,
             string sound, 

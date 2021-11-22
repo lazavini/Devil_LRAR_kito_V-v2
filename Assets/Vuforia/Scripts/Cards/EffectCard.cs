@@ -9,7 +9,7 @@ namespace Assets.Vuforia.Scripts.Cards
     public class EffectCard : ModificationCard
     {
         private ICollection<string> Effects;
-        Dropdown DropDownEffect => Status == TrackableBehaviour.Status.TRACKED ? Canvas.FirstOrDefault().gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
+        Dropdown DropDownEffect => Status == TrackableBehaviour.Status.TRACKED ? CardPanel.gameObject.GetComponentsInChildren<Dropdown>(false).FirstOrDefault(x => x.name == "Dropdown") : null;
         public string SelectedEffect { get; set; }
         public EffectCard(string name, 
             string sound, 

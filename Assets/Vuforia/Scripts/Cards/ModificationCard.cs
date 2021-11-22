@@ -25,7 +25,9 @@ namespace Assets.Vuforia.Scripts.Cards
         public string Animation { get; set; }
         public Animator Animator { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
         public TrackableBehaviour.Status Status { get; set; }
-        public IEnumerable<Canvas> Canvas { get; set; }
+        public RectTransform CardPanel => GameObject.FindObjectsOfType<Component>()
+                    .FirstOrDefault(x => x.name == "MainContainer")?.gameObject.GetComponentsInChildren<RectTransform>(true)
+                .FirstOrDefault(x => Name == x.name);
 
         public virtual void CardTrackChanged(TrackableBehaviour.Status status)
         {
