@@ -75,18 +75,28 @@ namespace Assets.Vuforia.Scripts.Cards
                 Percentage = 0;
                 if (Player2Mixer.PlayerCard.IsActive)
                     Percentage += 0.2f;
+                else
+                    return Percentage;
 
                 if (Player1Mixer.PlayerState.SeletedSkin == Player2Mixer.PlayerState.SeletedSkin)
                     Percentage += 0.2f;
+                else
+                    return Percentage;
 
                 if (Player1Mixer.PlayerState.SelectedEffect == Player2Mixer.PlayerState.SelectedEffect)
                     Percentage += 0.2f;
-                
+                else
+                    return Percentage;
+
                 if (Player1Mixer.PlayerState.Scale == Player2Mixer.PlayerState.Scale)
                     Percentage += 0.2f;
+                else
+                    return Percentage;
 
                 if (Player1Mixer.PlayerState.SelectedColor == Player2Mixer.PlayerState.SelectedColor)
                     Percentage += 0.2f;
+                else
+                    return Percentage;
             }
             return Percentage;
         }
