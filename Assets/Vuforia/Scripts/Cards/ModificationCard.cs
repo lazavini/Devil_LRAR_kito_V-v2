@@ -52,9 +52,17 @@ namespace Assets.Vuforia.Scripts.Cards
         {
             if (!string.IsNullOrEmpty(Animation))
                 card.Animator?.Play(Animation);
+            PlaySound();
+        }
 
+        void PlaySound()
+        {
+            var clipTarget = (AudioClip)Resources.Load($"Sounds_fala/{Name}");
 
+            if (clipTarget == null)
+                return;
 
+            AudioSource.PlayClipAtPoint(clipTarget, CardComponent.transform.position);
         }
 
         private void Hide()

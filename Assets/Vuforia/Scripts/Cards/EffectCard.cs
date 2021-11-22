@@ -41,6 +41,7 @@ namespace Assets.Vuforia.Scripts.Cards
         public override void Mix(ICard card)
         {
             base.Mix(card);
+
             var effectName = "";
             
             if(SelectedEffect != null)
