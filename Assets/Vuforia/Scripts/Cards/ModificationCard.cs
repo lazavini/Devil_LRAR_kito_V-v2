@@ -93,7 +93,7 @@ namespace Assets.Vuforia.Scripts.Cards
             var rendererComponents = CardComponent.GetComponentsInChildren<Renderer>(true);
             var colliderComponents = CardComponent.GetComponentsInChildren<Collider>(true);
             if (Canvas == null)
-                Canvas = CardComponent.GetComponentsInChildren<Canvas>(true);
+                Canvas = CardComponent.GetComponentsInChildren<Canvas>(true).Where(x => x.name == Name);
             //Enable rendering:
             foreach (var component in rendererComponents)
             {
