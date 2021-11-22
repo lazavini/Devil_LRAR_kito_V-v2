@@ -48,22 +48,25 @@ namespace Assets.Vuforia.Scripts.Cards
 
                 Percentage = 0;
                 if (PlayerCard.IsActive)
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
                 else
                     return Percentage;
 
                 if (!string.IsNullOrEmpty(PlayerState.SeletedSkin))
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
                 else
                     return Percentage;
 
                 if (!string.IsNullOrEmpty(PlayerState.SelectedEffect))
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
                 else
                     return Percentage;
-
+                if (!string.IsNullOrEmpty(PlayerState.Scale))
+                    Percentage += 0.2f;
+                else
+                    return Percentage;
                 if (!string.IsNullOrEmpty(PlayerState.SelectedColor))
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
                 else
                     return Percentage;
             }
@@ -71,16 +74,19 @@ namespace Assets.Vuforia.Scripts.Cards
             {
                 Percentage = 0;
                 if (Player2Mixer.PlayerCard.IsActive)
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
 
                 if (Player1Mixer.PlayerState.SeletedSkin == Player2Mixer.PlayerState.SeletedSkin)
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
 
                 if (Player1Mixer.PlayerState.SelectedEffect == Player2Mixer.PlayerState.SelectedEffect)
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
+                
+                if (Player1Mixer.PlayerState.Scale == Player2Mixer.PlayerState.Scale)
+                    Percentage += 0.2f;
 
                 if (Player1Mixer.PlayerState.SelectedColor == Player2Mixer.PlayerState.SelectedColor)
-                    Percentage += 0.25f;
+                    Percentage += 0.2f;
             }
             return Percentage;
         }

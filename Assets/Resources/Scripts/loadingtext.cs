@@ -43,22 +43,29 @@ public class loadingtext : MonoBehaviour {
             PlaySound("Sound_fala/STEMS LAZIM 1-16-Audio 2");
         }
 
-        if (a == 0.25f)
+        if (a == 0.2f)
         {
             textStatus.text = "Coloque a carta skin...";
             textInstruction.text = "Add skin card";
             PlaySound("Sound_fala/STEMS LAZIM 2-20-Audio 1");
         }
 
-        if (a == 0.5f)
+        if (a == 0.4f)
         {
             textStatus.text = "Coloque a carta power...";
             textInstruction.text = "Add power card";
             PlaySound("Sound_fala/STEMS LAZIM 4-27-Audio 1");
         }
 
+        if (a == 0.6f)
+        {
+            textStatus.text = "Coloque a carta scale...";
+            textInstruction.text = "Add scale card";
+            PlaySound("Sound_fala/STEMS LAZIM 6-36-Audio 1");
+        }
 
-        if (a == 0.75f)
+
+        if (a == 0.8f)
         {
             textStatus.text = "Coloque a carta color...";
             textInstruction.text = "Add color card";
