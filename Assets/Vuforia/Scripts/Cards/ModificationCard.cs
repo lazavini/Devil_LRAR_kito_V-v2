@@ -52,7 +52,6 @@ namespace Assets.Vuforia.Scripts.Cards
         {
             if (!string.IsNullOrEmpty(Animation))
                 card.Animator?.Play(Animation);
-            PlaySound();
         }
 
         void PlaySound()
@@ -109,6 +108,7 @@ namespace Assets.Vuforia.Scripts.Cards
             var modificationMenu = mainContainer.gameObject.GetComponentsInChildren<RectTransform>(true)
                 .FirstOrDefault(x => Name == x.name);
             modificationMenu?.gameObject?.SetActive(true);
+            PlaySound();
         }
     }
 }
