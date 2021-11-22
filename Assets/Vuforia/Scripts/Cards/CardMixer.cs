@@ -129,7 +129,7 @@ namespace Assets.Vuforia.Scripts.Cards
             var colorCard = colorCards.FirstOrDefault();
             firstCard.Mix(skinCard);
             firstCard.Mix(effectCard);
-            //firstCard.Mix(scaleCard);
+            firstCard.Mix(scaleCard);
             firstCard.Mix(colorCard);
             
             PlayerState.SeletedSkin = skinCard.SelectedSkin;
@@ -137,10 +137,7 @@ namespace Assets.Vuforia.Scripts.Cards
 
             PlayerState.SelectedEffect = effectCard.SelectedEffect;
             effectCard.SelectedEffect = null;
-
-
-            //Scale = scaleCard.X.ToString();
-            //scaleCard.X = null;
+            PlayerState.Scale = scaleCard.Y.ToString();
 
 
             PlayerState.SelectedColor = colorCard.SelectedColor;
