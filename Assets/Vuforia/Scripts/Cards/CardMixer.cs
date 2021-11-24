@@ -215,15 +215,14 @@ namespace Assets.Vuforia.Scripts.Cards
             skinCard.SelectedSkin = PlayerState.SeletedSkin;
             var scaleCards = TrackedCardsCollection.ScaleCards;
             var scaleCard = scaleCards.FirstOrDefault();
-            scaleCard.X = float.Parse(PlayerState.Scale);
-            firstCard.Mix(scaleCard);
+            scaleCard.X = string.IsNullOrEmpty(PlayerState.Scale) ? 1 : float.Parse(PlayerState.Scale);
             var colorCards = TrackedCardsCollection.ColorCards;
             var colorCard = colorCards.FirstOrDefault();
             colorCard.SelectedColor = "#" + PlayerState.SelectedColor;
             firstCard.Mix(skinCard);
             firstCard.Mix(effectCard);
-            //firstCard.Mix(scaleCard);
             firstCard.Mix(colorCard);
+            firstCard.Mix(scaleCard);
             PlayerGenerated = firstCard.CardComponent != null;
             PlayerState.IsLoading = !PlayerGenerated;
         }
