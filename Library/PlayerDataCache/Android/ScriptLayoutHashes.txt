@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/diguest/Documents/MakeHero_alpha.apk
+C:/Users/diguest/Documents/MakeHeros_alpha.apk
 SceneListBegin?
 Assets/Scenes/Main.unity
 Assets/Scenes/LR_cards.unity
