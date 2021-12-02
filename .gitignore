@@ -69,3 +69,12 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+VuforiaScripts.csproj
+Library/shadercompiler-UnityShaderCompiler.exe0.log
+Library/shadercompiler-UnityShaderCompiler.exe1.log
+Library/shadercompiler-UnityShaderCompiler.exe2.log
+Library/shadercompiler-UnityShaderCompiler.exe3.log
+Library/shadercompiler-UnityShaderCompiler.exe4.log
+Library/shadercompiler-UnityShaderCompiler.exe5.log
+Library/shadercompiler-UnityShaderCompiler.exe6.log
+Library/shadercompiler-UnityShaderCompiler.exe7.log

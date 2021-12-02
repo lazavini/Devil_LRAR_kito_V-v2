@@ -105,7 +105,7 @@ namespace Assets.Vuforia.Scripts.Cards
             // Enable canvas':
             var mainContainer = GameObject.FindObjectsOfType<Component>()
                     .FirstOrDefault(x => x.name == "MainContainer");
-            var modificationMenu = mainContainer.gameObject.GetComponentsInChildren<RectTransform>(true)
+            RectTransform modificationMenu = mainContainer.gameObject.GetComponentsInChildren<RectTransform>(true)
                 .FirstOrDefault(x => Name == x.name);
             modificationMenu?.gameObject?.SetActive(true);
             PlaySound();

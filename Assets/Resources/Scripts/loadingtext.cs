@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class loadingtext : MonoBehaviour {
-
     private RectTransform rectComponent;
     private Image imageComp;
 
@@ -29,7 +28,9 @@ public class loadingtext : MonoBehaviour {
         if (amount == imageComp.fillAmount)
             return;
         var clipTarget = (AudioClip)Resources.Load(sound);
-        AudioSource.PlayClipAtPoint(clipTarget, new Vector3(0,0,0), 1);
+        AudioSource.PlayClipAtPoint(clipTarget,
+                                    new Vector3(0, 11, 0),
+                             1);
     }
 
     // Update is called once per frame
@@ -38,37 +39,37 @@ public class loadingtext : MonoBehaviour {
         var a = imageComp.fillAmount;
         if (a == 0)
         {
-            textStatus.text = "Coloque a carta player...";
+            textStatus.text = "Coloque a carta player!";
             textInstruction.text = "Coloque a carta player";
             PlaySound("Sound_fala/STEMS LAZIM 1-16-Audio 2");
         }
 
         if (a == 0.2f)
         {
-            textStatus.text = "Coloque a carta skin...";
-            textInstruction.text = "Add skin card";
+            textStatus.text = "Coloque a carta skin!";
+            textInstruction.text = "Coloque skin card";
             PlaySound("Sound_fala/STEMS LAZIM 2-20-Audio 1");
         }
 
         if (a == 0.4f)
         {
-            textStatus.text = "Coloque a carta power...";
-            textInstruction.text = "Add power card";
+            textStatus.text = "Coloque a carta power!";
+            textInstruction.text = "Coloque power card";
             PlaySound("Sound_fala/STEMS LAZIM 4-27-Audio 1");
         }
 
         if (a == 0.6f)
         {
-            textStatus.text = "Coloque a carta scale...";
-            textInstruction.text = "Add scale card";
+            textStatus.text = "Coloque a carta scale!";
+            textInstruction.text = "Coloque scale card";
             PlaySound("Sound_fala/STEMS LAZIM 6-36-Audio 1");
         }
 
 
         if (a == 0.8f)
         {
-            textStatus.text = "Coloque a carta color...";
-            textInstruction.text = "Add color card";
+            textStatus.text = "Coloque a carta color!";
+            textInstruction.text = "Coloque color card";
             PlaySound("Sound_fala/STEMS LAZIM 8-11-44-Audio 1 3");
         }
 
