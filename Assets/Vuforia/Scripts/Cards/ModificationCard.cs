@@ -87,6 +87,15 @@ namespace Assets.Vuforia.Scripts.Cards
                 .FirstOrDefault(x => Name == x.name);
 
             modificationMenu?.gameObject?.SetActive(false);
+
+            if (mainContainer.gameObject.GetComponentsInChildren<RectTransform>(false).Length == 0)
+            {
+                mainContainer.gameObject.SetActive(false);
+            }
+            else
+            {
+                mainContainer.gameObject.SetActive(true);
+            }
         }
 
         private void Show()
@@ -109,6 +118,14 @@ namespace Assets.Vuforia.Scripts.Cards
                 .FirstOrDefault(x => Name == x.name);
             modificationMenu?.gameObject?.SetActive(true);
             PlaySound();
+            if (mainContainer.gameObject.GetComponentsInChildren<RectTransform>(false).Length == 0)
+            {
+                mainContainer.gameObject.SetActive(false);
+            }
+            else
+            {
+                mainContainer.gameObject.SetActive(true);
+            }
         }
     }
 }
