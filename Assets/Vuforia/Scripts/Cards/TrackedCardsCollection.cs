@@ -36,12 +36,8 @@ public static class TrackedCardsCollection
         if (cardsDataBase != null) return;
         cardsDataBase = new List<ICard>
         {
-            new CharacterCard("card_player1",
-                "sounds/truck_sound",
-                "Computational Thinking is based on the concepts of Pattern ."),
-            new CharacterCard("card_player2",
-                "sounds/truck_sound",
-                "Computational Thinking is based on "),
+            new CharacterCard("card_player1", "sounds/Click", "Computational Thinking is based on the concepts of Pattern ."),
+            new CharacterCard("card_player2","sounds/Click", "Computational Thinking is based on "),
             new ScaleCard("card_scale","","Scale card", 2,2,2),
             new EffectCard("card_power","","Power card","walk"),
             new SkinCard("card_skin","", "Skin card","idle"),
@@ -49,37 +45,7 @@ public static class TrackedCardsCollection
 
 
 
-            //new CharacterCard("CT_Head",
-            //    "sounds/truck_sound",
-            //    "Making a software."),
-
-            ////new CharacterCard("programing",
-            ////    "sounds/truck_sound",
-            ////    "Write a set of instruction."),
-
-            //  new CharacterCard("patterns",
-            //    "sounds/truck_sound",
-            //    "spotting and using similarites."),
-
-            //  new CharacterCard("Abstraction",
-            //    "sounds/truck_sound",
-            //    "Removindo unnecessary detail."),
-
-            //  new CharacterCard("decomposition",
-            //    "sounds/truck_sound",
-            //    "break down in to smaller parts."),
-
-            //  new CharacterCard("algorithms",
-            //    "sounds/truck_sound",
-            //    "making steps and rules."),
-
-            //  new CharacterCard("evaluation",
-            //    "sounds/truck_sound",
-            //    "making judgements"),
-
-            //    new CharacterCard("logic",
-            //    "sounds/truck_sound",
-            //    "predict and analyse.")
+       
         };
     }
 

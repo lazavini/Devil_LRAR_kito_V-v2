@@ -45,7 +45,8 @@ namespace Assets.Vuforia.Scripts.Cards
                 "Male",
                 "Female",
                 "Berserker",
-                "Kevin"
+                "Kevin",
+                "Heavy"
             };
         }
         public override void CardTrackChanged(TrackableBehaviour.Status status)

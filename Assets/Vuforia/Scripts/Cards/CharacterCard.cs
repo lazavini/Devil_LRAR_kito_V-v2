@@ -124,21 +124,7 @@ public class CharacterCard : ICard
         if (cards == null) return;
         foreach (var card in cards)
             Mix(card);
-        //for(var i = 0; i < cards.Length; i++)
-        //{
-            
-        //    //Debug.Log($"{cards[i]?.Name}");
-        //    //var head = cards[i].Parts?.FirstOrDefault(x => x.Type == CardPartType.Head);
-        //    //head?.CardPartRenderer?.gameObject?.SetActive(false);
-        //    //var componentes = GameObject.Find(cards[i].Name)
-        //    //    .GetComponentsInChildren<Renderer>();
-        //    //foreach(var componente in componentes)
-        //    //    componente.gameObject.SetActive(false);
-            
-        //        //ChangeArms((CharacterCard) cards[i]).Parts?.FirstOrDefault(x => x.Type == CardPartType.Arms).CardPartRenderer);
-        //    //if (i == 1)
-        //    //    ChangeHead(cards[i].Parts?.FirstOrDefault(x => x.Type == CardPartType.Head).CardPartRenderer);
-        //}
+        
     }
 
 

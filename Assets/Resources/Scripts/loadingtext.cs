@@ -29,7 +29,7 @@ public class loadingtext : MonoBehaviour {
             return;
         var clipTarget = (AudioClip)Resources.Load(sound);
         AudioSource.PlayClipAtPoint(clipTarget,
-                                    new Vector3(0, 11, 0),
+                                    new Vector3(0, 0, 0),
                              1);
     }
 
@@ -41,28 +41,28 @@ public class loadingtext : MonoBehaviour {
         {
             textStatus.text = "Coloque a carta player!";
             textInstruction.text = "Coloque a carta player";
-            PlaySound("Sound_fala/STEMS LAZIM 1-16-Audio 2");
+            PlaySound("Sound_fala/Carta_player");
         }
 
         if (a == 0.2f)
         {
             textStatus.text = "Coloque a carta skin!";
             textInstruction.text = "Coloque skin card";
-            PlaySound("Sound_fala/STEMS LAZIM 2-20-Audio 1");
+            PlaySound("Sound_fala/Carta_skin");
         }
 
         if (a == 0.4f)
         {
             textStatus.text = "Coloque a carta power!";
             textInstruction.text = "Coloque power card";
-            PlaySound("Sound_fala/STEMS LAZIM 4-27-Audio 1");
+            PlaySound("Sound_fala/Carta_power");
         }
 
         if (a == 0.6f)
         {
             textStatus.text = "Coloque a carta scale!";
             textInstruction.text = "Coloque scale card";
-            PlaySound("Sound_fala/STEMS LAZIM 6-36-Audio 1");
+            PlaySound("Sound_fala/Carta_scale");
         }
 
 
@@ -70,14 +70,14 @@ public class loadingtext : MonoBehaviour {
         {
             textStatus.text = "Coloque a carta color!";
             textInstruction.text = "Coloque color card";
-            PlaySound("Sound_fala/STEMS LAZIM 8-11-44-Audio 1 3");
+            PlaySound("Sound_fala/carta_color");
         }
 
         if (a == 1)
         {
             textStatus.text = "Heroi completo!";
             textInstruction.text = "";
-            PlaySound("Sound_fala/STEMS LAZIM 10-52-Audio 1");
+            PlaySound("Sound_fala/Heroi_completo");
         }
 
         amount = imageComp.fillAmount;
