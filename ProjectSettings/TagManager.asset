@@ -9,6 +9,7 @@ TagManager:
   - skin
   - effect
   - card-modifier
+  - music
   layers:
   - Default
   - TransparentFX

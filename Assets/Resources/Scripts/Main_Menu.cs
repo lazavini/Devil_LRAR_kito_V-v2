@@ -19,6 +19,7 @@ public class Main_Menu : MonoBehaviour
     public Button ButtonHowtouse;
     public Button ButtonSurvey;
     public Button ButtonLoad;
+    public AudioSource AudioSource;
 
 
     void Start()
@@ -32,6 +33,17 @@ public class Main_Menu : MonoBehaviour
         ButtonSurvey.onClick.AddListener(Survey);
         ButtonLoad.onClick.AddListener(Load);
         NavigationHistory.ActualScene = SceneManager.GetActiveScene().name;
+        if(!AudioSource.isPlaying)
+            AudioSource.Play();
+    }
+    private void Awake()
+    {
+        DontDestroyOnLoad(AudioSource);
+    }
+
+    private void OnDestroy()
+    {
+        DontDestroyOnLoad(AudioSource);
     }
 
     // Update is called once per frame
@@ -70,5 +82,6 @@ public class Main_Menu : MonoBehaviour
         NavigationHistory.PreviousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Survey");
     }
+
 }
  

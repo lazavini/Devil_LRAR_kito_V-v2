@@ -276,5 +276,13 @@ namespace Assets.Vuforia.Scripts.Cards
         {
             return JsonConvert.SerializeObject(new List<PlayerState> { Player1Mixer.PlayerState, Player2Mixer.PlayerState });
         }
+
+        public static void Remove(string saveName)
+        {
+            string destination = $"{saveName}";
+            if (!File.Exists(destination))
+                return;
+            File.Delete(destination);
+        }
     }
 }

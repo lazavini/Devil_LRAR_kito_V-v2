@@ -24,6 +24,11 @@ public class Menu_Load : MonoBehaviour
         }
         catch (Exception) { }
     }
+    private void Awake()
+    {
+        //var music = GameObject.FindWithTag("music");
+        //DontDestroyOnLoad(music);
+    }
 
     private void PopulateHerosDropdown()
     {
@@ -66,6 +71,12 @@ public class Menu_Load : MonoBehaviour
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
     }
 
+    public void Remove()
+    {
+        var saveFile = CardMixer.GetSaves().ElementAt(DropdownHeros.value);
+        CardMixer.Remove(saveFile);
+        PopulateHerosDropdown();
+    }
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
         try
